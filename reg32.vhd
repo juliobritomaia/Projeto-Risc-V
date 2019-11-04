@@ -1,0 +1,18 @@
+LIBRARY ieee ;
+USE ieee.std_logic_1164.all ;
+
+ENTITY reg32 IS PORT(
+		D  : IN   STD_LOGIC_VECTOR(63 DOWNTO 0) ;
+		load, clk: IN STD_LOGIC ;
+		Q  : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
+);
+END reg32;
+
+ARCHITECTURE projeto OF reg32 IS
+SIGNAL AUX : STD_LOGIC_VECTOR(63 DOWNTO 0);
+BEGIN
+			AUX <= 	D WHEN ((LOAD = '1') AND (RISING_EDGE(CLK))) ELSE
+						AUX;
+						
+			Q <= 		AUX;
+END projeto ;
