@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity PC is port(
 	enablePC,clk : in std_logic;
 	pcIN : in std_logic_vector(9 downto 0);
-	pcOUT : buffer std_logic_vector(9 downto 0);
+	pcOUT : buffer std_logic_vector(9 downto 0)
 );
 end PC;
 
