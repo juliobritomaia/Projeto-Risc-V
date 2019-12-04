@@ -18,7 +18,7 @@ begin
 		extensao <=	"11111111111111111111111111111111" WHEN '1',
 						"0" WHEN OTHERS;
 	WITH sel SELECT
-		S <=	IN2 WHEN "10",
-				IN1 WHEN "01",
-				extensao & extensao(31 downto 10) & IN0 WHEN OTHERS;
+		S <=	IN2 WHEN "10", --ALU
+				IN1 WHEN "01", --
+				extensao & extensao(31 downto 10) & IN0 WHEN OTHERS; --
 end hardware;
