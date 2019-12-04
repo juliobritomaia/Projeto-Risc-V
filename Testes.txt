@@ -1,0 +1,7 @@
+WaveForm 2:
+UnidadeDeMemoria
+Mux32to1
+Reg32
+Regfile
+Branch
+Memoria: Não Está Funcionando
