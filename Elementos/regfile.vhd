@@ -6,7 +6,7 @@ ENTITY regfile IS PORT(
 	rd: IN STD_LOGIC_VECTOR(4 DOWNTO 0);
 	clock,enable : IN STD_LOGIC;
 	inst_rs1,inst_rs2: IN STD_LOGIC_VECTOR(4 DOWNTO 0);
-	alu_rs1,alu_rs2: OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
+	out_rs1,out_rs2: OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
 );
 END regfile;
 
@@ -75,7 +75,7 @@ Mux_rs1: mux32to1 port map (
 	x16 => OutX16, x17 => OutX17, x18 => OutX18, x19 => OutX19, x20 => OutX20, x21 => OutX21, x22 => OutX22, x23 => OutX23,
 	x24 => OutX24, x25 => OutX25, x26 => OutX26, x27 => OutX27, x28 => OutX28, x29 => OutX29, x30 => OutX30, x31 => OutX31,
 	sel  => inst_rs1,
-	xOut  => alu_rs1
+	xOut  => out_rs1
 );
 
 Mux_rs2: mux32to1 port map (
@@ -84,7 +84,7 @@ Mux_rs2: mux32to1 port map (
 	x16 => OutX16, x17 => OutX17, x18 => OutX18, x19 => OutX19, x20 => OutX20, x21 => OutX21, x22 => OutX22, x23 => OutX23,
 	x24 => OutX24, x25 => OutX25, x26 => OutX26, x27 => OutX27, x28 => OutX28, x29 => OutX29, x30 => OutX30, x31 => OutX31,
 	sel  => inst_rs2,
-	xOut  => alu_rs2
+	xOut  => out_rs2
 );
 InX0 <= "0000000000000000000000000000000000000000000000000000000000000000";
 --	WITH rd SELECT

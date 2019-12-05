@@ -6,7 +6,7 @@ entity PC is port(
 	selPC : in std_logic_vector(1 downto 0);
 	clk : in std_logic;
 	pcIN : in std_logic_vector(11 downto 0);
-	pcOUT : buffer std_logic_vector(12 downto 0)
+	pcOUT : buffer std_logic_vector(11 downto 0)
 );
 end PC;
 
