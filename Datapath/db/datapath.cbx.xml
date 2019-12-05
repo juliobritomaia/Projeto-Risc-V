@@ -2,12 +2,5 @@
 <LOG_ROOT>
 	<PROJECT NAME="datapath">
 		<CBX_INST_ENTRY INSTANCE_NAME="|datapath|memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_m7a1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|datapath|memoria:macroMemoria|UnidadeDeMemoria:UM2|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_m7a1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|datapath|memoria:macroMemoria|UnidadeDeMemoria:UM4|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_m7a1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|datapath|memoria:macroMemoria|UnidadeDeMemoria:UM6|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_m7a1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|datapath|memoria:macroMemoria|UnidadeDeMemoria:UM1|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_m7a1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|datapath|memoria:macroMemoria|UnidadeDeMemoria:UM3|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_m7a1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|datapath|memoria:macroMemoria|UnidadeDeMemoria:UM5|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_m7a1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|datapath|memoria:macroMemoria|UnidadeDeMemoria:UM7|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_m7a1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
