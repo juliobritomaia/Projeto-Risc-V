@@ -18,22 +18,12 @@ signal saida_memorias : std_logic_vector(63 downto 0);
 signal saidaAddress : std_logic_vector(87 downto 0);
 signal saidaWR: std_logic_vector(7 downto 0);
 
-component UnidadeDeMemoria port(
-		address		: IN STD_LOGIC_VECTOR (10 DOWNTO 0);
-		clock		: IN STD_LOGIC  := '1';
-		data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		wren		: IN STD_LOGIC ;
-		q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
-);
-end component;
-
 component deslocador port(
 	multiplicador: in std_logic_vector(2 downto 0);
 	entrada: in std_logic_vector(63 downto 0);
 	saida: out std_logic_vector(63 downto 0)
 );
 end component;
-
 
 component addressControler port(
 	address: in std_logic_vector(13 downto 0);
@@ -48,6 +38,24 @@ component writerControler port(
 	S: out std_logic_vector(7 downto 0)
 );
 end component;
+
+component UnidadeDeMemoria port(
+		address		: IN STD_LOGIC_VECTOR (10 DOWNTO 0);
+		clock		: IN STD_LOGIC  := '1';
+		data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		wren		: IN STD_LOGIC ;
+		q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+);
+end component;
+
+component concatenador port(
+	entrada: in std_logic_vector(63 downto 0);
+	address,largura: in std_logic_vector(2 downto 0);
+	wr: in std_logic;
+	saida: buffer std_logic_vector(63 downto 0)
+);
+end component;
+
 
 begin
 
@@ -66,4 +74,5 @@ memoria5: UnidadeDeMemoria port map( address => saidaAddress(65 downto 55), cloc
 memoria6: UnidadeDeMemoria port map( address => saidaAddress(76 downto 66), clock => clk, data => saida_deslocador(55 downto 48), wren => saidaWR(6), q => saida_memorias(55 downto 48) );
 memoria7: UnidadeDeMemoria port map( address => saidaAddress(87 downto 77), clock => clk, data => saida_deslocador(63 downto 56), wren => saidaWR(7), q => saida_memorias(63 downto 56) );
 
+concatenador1: concatenador port map( entrada => saida_memorias, address => address(2 downto 0), largura => largura, wr => wr, saida => dataOUT);
 end architecture;

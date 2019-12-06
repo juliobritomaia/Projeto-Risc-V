@@ -49,26 +49,34 @@ set_global_assignment -name DEVICE_FILTER_PIN_COUNT 672
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_FILE ../Elementos/datapath.vhd
+set_global_assignment -name VHDL_FILE ../Elementos/controlador.vhd
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do regfile/regfile.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do regfile/reg32.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do regfile/mux32to1.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do datapath/RI.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do datapath/PC.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do datapath/outCheck.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do datapath/mux3.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do datapath/mux2.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do datapath/mux1.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do datapath/mux0.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do datapath/inCheck.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do datapath/branch.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos do datapath/addressSignal.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos da alu/alu1.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos da memória/writerControler.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos da memória/UnidadeDeMemoria.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos da memória/mux2to1_11.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos da memória/mux2to1.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos da memória/mult8.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos da memória/macroMemoria.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos da memória/deslocador.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos da memória/concatenador.vhd"
+set_global_assignment -name VHDL_FILE "../Elementos/elementos da memória/addressControler.vhd"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VHDL_FILE ../Elementos/reg32.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/mux32to1.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/UnidadeDeMemoria.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/RI.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/regfile.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/PC.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/mux3.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/mux2.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/mux1.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/mux0.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/memoria.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/datapath.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/branch.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/alu1.vhd
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VHDL_FILE ../Elementos/outCheck.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/inCheck.vhd
-set_global_assignment -name VHDL_FILE ../Elementos/addressSignal.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

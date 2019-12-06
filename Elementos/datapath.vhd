@@ -37,12 +37,12 @@ signal outANDport: std_logic;
 signal outPC_mais4: std_logic_vector(11 downto 0);
 signal outINcheck: std_logic_vector(63 downto 0);
 
-component memoria port(
-	rw,clk: in std_logic;
-	largura: in std_logic_vector(2 downto 0);
+component macroMemoria port(
+	dataIN: in std_logic_vector(63 downto 0);
 	address: in std_logic_vector(13 downto 0);
-	datain: in std_logic_vector(63 downto 0);
-	dataout: out std_logic_vector(63 downto 0)
+	largura: in std_logic_vector(2 downto 0);
+	wr,clk: in std_logic;
+	dataOUT: out std_logic_vector(63 downto 0)
 );
 end component;
 
@@ -144,7 +144,7 @@ begin
 comparacao <= "100000000000000";
 process(outALU,comparacao)
 begin
-	if(comparacao >= outALU) then
+	if(outALU >= comparacao) then
 		outCOMPARADOR <= '1';
 	else
 		outCOMPARADOR <= '0';
@@ -180,12 +180,12 @@ addressSignal_1: addressSignal port map(
 --MEMORIA DE PROGRAMA
 addressMemProg <= outPC;
 
-macroMemoria: memoria port map(
-	rw => outANDport, clk => clk,
-	largura => outRI(14 downto 12),
+memoriaPrograma: macroMemoria port map(
+	dataIN => outRS2,
 	address => outALU(13 downto 0),
-	datain => outRS2,
-	dataout => outMemDados
+	largura => outRI(14 downto 12),
+	wr => outANDport, clk => clk,
+	dataOUT => outMemDados
 );
 
 RI1 : RI port map (
