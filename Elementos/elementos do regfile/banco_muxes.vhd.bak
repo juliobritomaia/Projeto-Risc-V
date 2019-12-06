@@ -1,0 +1,14 @@
+LIBRARY ieee ;
+USE ieee.std_logic_1164.all ;
+
+entity banco_muxes is port(
+		entrada  : in std_logic_vector(2047 DOWNTO 0) ;
+		address  : in std_logic_vector(4 DOWNTO 0) ;
+		saida  : BUFFER STD_LOGIC_VECTOR(63 DOWNTO 0)
+);
+end entity;
+
+architecture projeto of banco_muxes is
+begin
+			
+end projeto ;

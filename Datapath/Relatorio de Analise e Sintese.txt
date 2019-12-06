@@ -1,0 +1,412 @@
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (10631): VHDL Process Statement warning at datapath.vhd(140): inferring latch(es) for signal or variable "dataOUT", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at alu1.vhd(21): inferring latch(es) for signal or variable "aux64", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at alu1.vhd(21): inferring latch(es) for signal or variable "aux2_64", which holds its previous value in one or more paths through the process
+Warning (13012): Latch dataOUT[0]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[1]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[2]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[3]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[4]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[5]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[6]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[7]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[8]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[9]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[10]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[11]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[12]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[13]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[14]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[15]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[16]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[17]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[18]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[19]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[20]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[21]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[22]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[23]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[24]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[25]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[26]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[27]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[28]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[29]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[30]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[31]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[32]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[33]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[34]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[35]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[36]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[37]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[38]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[39]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[40]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[41]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[42]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[43]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[44]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[45]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[46]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[47]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[48]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[49]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[50]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[51]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[52]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[53]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[54]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[55]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[56]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[57]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[58]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[59]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[60]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[61]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[62]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch dataOUT[63]$latch has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal RI:RI1|riOUT[21]
+Warning (13012): Latch alu1:alu1_1|aux64[31] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux2_64[31] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux64[63] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[62] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[61] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[60] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[59] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[58] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[57] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[56] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[55] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[54] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[53] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[52] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[51] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[50] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[49] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[48] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[47] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[46] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[45] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[44] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[43] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[42] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[41] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[40] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[39] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[38] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[37] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[36] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[35] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[34] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[33] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[32] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[30] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[29] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[28] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[27] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[26] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[25] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[24] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[23] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[22] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[21] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[20] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[19] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[18] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[17] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[16] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[15] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[14] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[13] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[12] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[11] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[10] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[9] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[8] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[7] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[6] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[5] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[4] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[3] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[2] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[1] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[0] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux2_64[63] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[1] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[0] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[2] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[62] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[61] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[60] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[59] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[58] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[57] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[56] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[55] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[54] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[53] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[52] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[51] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[50] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[49] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[48] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[47] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[46] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[45] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[44] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[43] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[42] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[41] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[40] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[39] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[38] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[37] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[36] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[35] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[34] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[33] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[32] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[30] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[29] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[28] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[27] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[26] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[25] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[24] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[23] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[22] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[21] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[20] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[19] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[18] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[17] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[16] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[15] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[14] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[13] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[12] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[11] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[10] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[9] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[8] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[7] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[6] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[5] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[4] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[3] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch mux3:mux3_1|S[0] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[1] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[2] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[3] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[4] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[5] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[6] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[7] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[8] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[9] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[10] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[11] has unsafe behavior
+	Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]

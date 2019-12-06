@@ -1,0 +1,492 @@
+$comment
+	File created using the following command:
+		vcd file datapath.msim.vcd -direction
+$end
+$date
+	Fri Dec 06 17:59:59 2019
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module extensor_sinal_vlg_vec_tst $end
+$var reg 12 ! contador [11:0] $end
+$var reg 32 " instrucao [31:0] $end
+$var wire 1 # contador_64 [63] $end
+$var wire 1 $ contador_64 [62] $end
+$var wire 1 % contador_64 [61] $end
+$var wire 1 & contador_64 [60] $end
+$var wire 1 ' contador_64 [59] $end
+$var wire 1 ( contador_64 [58] $end
+$var wire 1 ) contador_64 [57] $end
+$var wire 1 * contador_64 [56] $end
+$var wire 1 + contador_64 [55] $end
+$var wire 1 , contador_64 [54] $end
+$var wire 1 - contador_64 [53] $end
+$var wire 1 . contador_64 [52] $end
+$var wire 1 / contador_64 [51] $end
+$var wire 1 0 contador_64 [50] $end
+$var wire 1 1 contador_64 [49] $end
+$var wire 1 2 contador_64 [48] $end
+$var wire 1 3 contador_64 [47] $end
+$var wire 1 4 contador_64 [46] $end
+$var wire 1 5 contador_64 [45] $end
+$var wire 1 6 contador_64 [44] $end
+$var wire 1 7 contador_64 [43] $end
+$var wire 1 8 contador_64 [42] $end
+$var wire 1 9 contador_64 [41] $end
+$var wire 1 : contador_64 [40] $end
+$var wire 1 ; contador_64 [39] $end
+$var wire 1 < contador_64 [38] $end
+$var wire 1 = contador_64 [37] $end
+$var wire 1 > contador_64 [36] $end
+$var wire 1 ? contador_64 [35] $end
+$var wire 1 @ contador_64 [34] $end
+$var wire 1 A contador_64 [33] $end
+$var wire 1 B contador_64 [32] $end
+$var wire 1 C contador_64 [31] $end
+$var wire 1 D contador_64 [30] $end
+$var wire 1 E contador_64 [29] $end
+$var wire 1 F contador_64 [28] $end
+$var wire 1 G contador_64 [27] $end
+$var wire 1 H contador_64 [26] $end
+$var wire 1 I contador_64 [25] $end
+$var wire 1 J contador_64 [24] $end
+$var wire 1 K contador_64 [23] $end
+$var wire 1 L contador_64 [22] $end
+$var wire 1 M contador_64 [21] $end
+$var wire 1 N contador_64 [20] $end
+$var wire 1 O contador_64 [19] $end
+$var wire 1 P contador_64 [18] $end
+$var wire 1 Q contador_64 [17] $end
+$var wire 1 R contador_64 [16] $end
+$var wire 1 S contador_64 [15] $end
+$var wire 1 T contador_64 [14] $end
+$var wire 1 U contador_64 [13] $end
+$var wire 1 V contador_64 [12] $end
+$var wire 1 W contador_64 [11] $end
+$var wire 1 X contador_64 [10] $end
+$var wire 1 Y contador_64 [9] $end
+$var wire 1 Z contador_64 [8] $end
+$var wire 1 [ contador_64 [7] $end
+$var wire 1 \ contador_64 [6] $end
+$var wire 1 ] contador_64 [5] $end
+$var wire 1 ^ contador_64 [4] $end
+$var wire 1 _ contador_64 [3] $end
+$var wire 1 ` contador_64 [2] $end
+$var wire 1 a contador_64 [1] $end
+$var wire 1 b contador_64 [0] $end
+$var wire 1 c instrucao_64 [63] $end
+$var wire 1 d instrucao_64 [62] $end
+$var wire 1 e instrucao_64 [61] $end
+$var wire 1 f instrucao_64 [60] $end
+$var wire 1 g instrucao_64 [59] $end
+$var wire 1 h instrucao_64 [58] $end
+$var wire 1 i instrucao_64 [57] $end
+$var wire 1 j instrucao_64 [56] $end
+$var wire 1 k instrucao_64 [55] $end
+$var wire 1 l instrucao_64 [54] $end
+$var wire 1 m instrucao_64 [53] $end
+$var wire 1 n instrucao_64 [52] $end
+$var wire 1 o instrucao_64 [51] $end
+$var wire 1 p instrucao_64 [50] $end
+$var wire 1 q instrucao_64 [49] $end
+$var wire 1 r instrucao_64 [48] $end
+$var wire 1 s instrucao_64 [47] $end
+$var wire 1 t instrucao_64 [46] $end
+$var wire 1 u instrucao_64 [45] $end
+$var wire 1 v instrucao_64 [44] $end
+$var wire 1 w instrucao_64 [43] $end
+$var wire 1 x instrucao_64 [42] $end
+$var wire 1 y instrucao_64 [41] $end
+$var wire 1 z instrucao_64 [40] $end
+$var wire 1 { instrucao_64 [39] $end
+$var wire 1 | instrucao_64 [38] $end
+$var wire 1 } instrucao_64 [37] $end
+$var wire 1 ~ instrucao_64 [36] $end
+$var wire 1 !! instrucao_64 [35] $end
+$var wire 1 "! instrucao_64 [34] $end
+$var wire 1 #! instrucao_64 [33] $end
+$var wire 1 $! instrucao_64 [32] $end
+$var wire 1 %! instrucao_64 [31] $end
+$var wire 1 &! instrucao_64 [30] $end
+$var wire 1 '! instrucao_64 [29] $end
+$var wire 1 (! instrucao_64 [28] $end
+$var wire 1 )! instrucao_64 [27] $end
+$var wire 1 *! instrucao_64 [26] $end
+$var wire 1 +! instrucao_64 [25] $end
+$var wire 1 ,! instrucao_64 [24] $end
+$var wire 1 -! instrucao_64 [23] $end
+$var wire 1 .! instrucao_64 [22] $end
+$var wire 1 /! instrucao_64 [21] $end
+$var wire 1 0! instrucao_64 [20] $end
+$var wire 1 1! instrucao_64 [19] $end
+$var wire 1 2! instrucao_64 [18] $end
+$var wire 1 3! instrucao_64 [17] $end
+$var wire 1 4! instrucao_64 [16] $end
+$var wire 1 5! instrucao_64 [15] $end
+$var wire 1 6! instrucao_64 [14] $end
+$var wire 1 7! instrucao_64 [13] $end
+$var wire 1 8! instrucao_64 [12] $end
+$var wire 1 9! instrucao_64 [11] $end
+$var wire 1 :! instrucao_64 [10] $end
+$var wire 1 ;! instrucao_64 [9] $end
+$var wire 1 <! instrucao_64 [8] $end
+$var wire 1 =! instrucao_64 [7] $end
+$var wire 1 >! instrucao_64 [6] $end
+$var wire 1 ?! instrucao_64 [5] $end
+$var wire 1 @! instrucao_64 [4] $end
+$var wire 1 A! instrucao_64 [3] $end
+$var wire 1 B! instrucao_64 [2] $end
+$var wire 1 C! instrucao_64 [1] $end
+$var wire 1 D! instrucao_64 [0] $end
+$var wire 1 E! sampler $end
+$scope module i1 $end
+$var wire 1 F! gnd $end
+$var wire 1 G! vcc $end
+$var wire 1 H! unknown $end
+$var tri1 1 I! devclrn $end
+$var tri1 1 J! devpor $end
+$var tri1 1 K! devoe $end
+$var wire 1 L! tipo[0]~0_combout $end
+$var wire 1 M! tipo[0]~1_combout $end
+$var wire 1 N! Equal2~1_combout $end
+$var wire 1 O! Equal2~2_combout $end
+$var wire 1 P! Equal0~1_combout $end
+$var wire 1 Q! tipo[0]~2_combout $end
+$var wire 1 R! Equal3~0_combout $end
+$var wire 1 S! Equal0~0_combout $end
+$var wire 1 T! Equal0~2_combout $end
+$var wire 1 U! tipo[2]~3_combout $end
+$var wire 1 V! Equal2~3_combout $end
+$var wire 1 W! tipo[1]~4_combout $end
+$var wire 1 X! instrucao_64~0_combout $end
+$var wire 1 Y! instrucao_64~1_combout $end
+$var wire 1 Z! Equal2~0_combout $end
+$var wire 1 [! instrucao_64~2_combout $end
+$var wire 1 \! instrucao_64~3_combout $end
+$var wire 1 ]! instrucao_64~4_combout $end
+$var wire 1 ^! instrucao_64~5_combout $end
+$var wire 1 _! instrucao_64~6_combout $end
+$var wire 1 `! instrucao_64~7_combout $end
+$var wire 1 a! instrucao_64~8_combout $end
+$var wire 1 b! instrucao_64~9_combout $end
+$var wire 1 c! instrucao_64~10_combout $end
+$var wire 1 d! instrucao_64~11_combout $end
+$var wire 1 e! instrucao_64~12_combout $end
+$var wire 1 f! instrucao_64~13_combout $end
+$var wire 1 g! instrucao_64~14_combout $end
+$var wire 1 h! instrucao_64~15_combout $end
+$var wire 1 i! instrucao_64~16_combout $end
+$var wire 1 j! instrucao_64~17_combout $end
+$var wire 1 k! instrucao_64~18_combout $end
+$var wire 1 l! instrucao_64~19_combout $end
+$var wire 1 m! instrucao_64~20_combout $end
+$var wire 1 n! instrucao_64~21_combout $end
+$var wire 1 o! instrucao_64~22_combout $end
+$var wire 1 p! instrucao_64~23_combout $end
+$var wire 1 q! instrucao_64~24_combout $end
+$var wire 1 r! instrucao_64~25_combout $end
+$var wire 1 s! instrucao_64~26_combout $end
+$var wire 1 t! instrucao_64~27_combout $end
+$var wire 1 u! Equal7~0_combout $end
+$var wire 1 v! instrucao_64~28_combout $end
+$var wire 1 w! instrucao_64~29_combout $end
+$var wire 1 x! instrucao_64~30_combout $end
+$var wire 1 y! instrucao_64~31_combout $end
+$var wire 1 z! instrucao_64~32_combout $end
+$var wire 1 {! instrucao_64~33_combout $end
+$var wire 1 |! instrucao_64~34_combout $end
+$var wire 1 }! instrucao_64~35_combout $end
+$var wire 1 ~! instrucao_64~36_combout $end
+$var wire 1 !" instrucao_64~37_combout $end
+$var wire 1 "" instrucao_64~38_combout $end
+$var wire 1 #" instrucao_64~39_combout $end
+$var wire 1 $" instrucao~combout [31] $end
+$var wire 1 %" instrucao~combout [30] $end
+$var wire 1 &" instrucao~combout [29] $end
+$var wire 1 '" instrucao~combout [28] $end
+$var wire 1 (" instrucao~combout [27] $end
+$var wire 1 )" instrucao~combout [26] $end
+$var wire 1 *" instrucao~combout [25] $end
+$var wire 1 +" instrucao~combout [24] $end
+$var wire 1 ," instrucao~combout [23] $end
+$var wire 1 -" instrucao~combout [22] $end
+$var wire 1 ." instrucao~combout [21] $end
+$var wire 1 /" instrucao~combout [20] $end
+$var wire 1 0" instrucao~combout [19] $end
+$var wire 1 1" instrucao~combout [18] $end
+$var wire 1 2" instrucao~combout [17] $end
+$var wire 1 3" instrucao~combout [16] $end
+$var wire 1 4" instrucao~combout [15] $end
+$var wire 1 5" instrucao~combout [14] $end
+$var wire 1 6" instrucao~combout [13] $end
+$var wire 1 7" instrucao~combout [12] $end
+$var wire 1 8" instrucao~combout [11] $end
+$var wire 1 9" instrucao~combout [10] $end
+$var wire 1 :" instrucao~combout [9] $end
+$var wire 1 ;" instrucao~combout [8] $end
+$var wire 1 <" instrucao~combout [7] $end
+$var wire 1 =" instrucao~combout [6] $end
+$var wire 1 >" instrucao~combout [5] $end
+$var wire 1 ?" instrucao~combout [4] $end
+$var wire 1 @" instrucao~combout [3] $end
+$var wire 1 A" instrucao~combout [2] $end
+$var wire 1 B" instrucao~combout [1] $end
+$var wire 1 C" instrucao~combout [0] $end
+$var wire 1 D" contador~combout [11] $end
+$var wire 1 E" contador~combout [10] $end
+$var wire 1 F" contador~combout [9] $end
+$var wire 1 G" contador~combout [8] $end
+$var wire 1 H" contador~combout [7] $end
+$var wire 1 I" contador~combout [6] $end
+$var wire 1 J" contador~combout [5] $end
+$var wire 1 K" contador~combout [4] $end
+$var wire 1 L" contador~combout [3] $end
+$var wire 1 M" contador~combout [2] $end
+$var wire 1 N" contador~combout [1] $end
+$var wire 1 O" contador~combout [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b100000000000 !
+b11000000000000000010000000010011 "
+0b
+0a
+0`
+0_
+0^
+0]
+0\
+0[
+0Z
+0Y
+0X
+1W
+0V
+0U
+0T
+0S
+0R
+0Q
+0P
+0O
+0N
+0M
+0L
+0K
+0J
+0I
+0H
+0G
+0F
+0E
+0D
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+0D!
+0C!
+0B!
+0A!
+0@!
+0?!
+0>!
+0=!
+0<!
+0;!
+1:!
+19!
+18!
+17!
+16!
+15!
+14!
+13!
+12!
+11!
+10!
+1/!
+1.!
+1-!
+1,!
+1+!
+1*!
+1)!
+1(!
+1'!
+1&!
+1%!
+1$!
+1#!
+1"!
+1!!
+1~
+1}
+1|
+1{
+1z
+1y
+1x
+1w
+1v
+1u
+1t
+1s
+1r
+1q
+1p
+1o
+1n
+1m
+1l
+1k
+1j
+1i
+1h
+1g
+1f
+1e
+1d
+1c
+xE!
+0F!
+1G!
+xH!
+1I!
+1J!
+1K!
+0L!
+0M!
+0N!
+0O!
+0P!
+0Q!
+1R!
+1S!
+0T!
+0U!
+0V!
+0W!
+0X!
+0Y!
+0Z!
+1[!
+0\!
+0]!
+0^!
+0_!
+0`!
+0a!
+0b!
+0c!
+0d!
+1e!
+1f!
+1g!
+1h!
+1i!
+1j!
+1k!
+1l!
+1m!
+1n!
+1o!
+1p!
+1q!
+1r!
+1s!
+1t!
+0u!
+1v!
+1w!
+1x!
+1y!
+1z!
+1{!
+1|!
+1}!
+1~!
+1!"
+1""
+1#"
+1C"
+1B"
+0A"
+0@"
+1?"
+0>"
+0="
+0<"
+0;"
+0:"
+09"
+08"
+07"
+16"
+05"
+04"
+03"
+02"
+01"
+00"
+0/"
+0."
+0-"
+0,"
+0+"
+0*"
+0)"
+0("
+0'"
+0&"
+1%"
+1$"
+0O"
+0N"
+0M"
+0L"
+0K"
+0J"
+0I"
+0H"
+0G"
+0F"
+0E"
+1D"
+$end
+#1000000
