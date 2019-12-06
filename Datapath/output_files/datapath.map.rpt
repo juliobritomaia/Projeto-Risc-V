@@ -1,5 +1,5 @@
 Analysis & Synthesis report for datapath
-Fri Dec 06 13:18:05 2019
+Fri Dec 06 18:19:18 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -65,7 +65,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 06 13:18:05 2019           ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 06 18:19:17 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; datapath                                        ;
 ; Top-level Entity Name              ; datapath                                        ;
@@ -1224,7 +1224,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:52     ;
+; Top            ; 00:01:50     ;
 +----------------+--------------+
 
 
@@ -1234,7 +1234,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Dec 06 13:16:08 2019
+    Info: Processing started: Fri Dec 06 18:17:20 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off datapath -c datapath
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/elementos do regfile/reg64.vhd
@@ -1323,6 +1323,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file /jygos/
 Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/elementos da memória/addresscontroler.vhd
     Info (12022): Found design unit 1: addressControler-design
     Info (12023): Found entity 1: addressControler
+Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/elementos do datapath/extensor_sinal.vhd
+    Info (12022): Found design unit 1: extensor_sinal-design
+    Info (12023): Found entity 1: extensor_sinal
 Info (12127): Elaborating entity "datapath" for the top level hierarchy
 Info (12128): Elaborating entity "inCheck" for hierarchy "inCheck:checkIn"
 Info (12128): Elaborating entity "outCheck" for hierarchy "outCheck:checkOut"
@@ -2248,9 +2251,9 @@ Info (21057): Implemented 11947 device resources after synthesis - the final res
     Info (21061): Implemented 11675 logic cells
     Info (21064): Implemented 64 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 573 warnings
-    Info: Peak virtual memory: 4769 megabytes
-    Info: Processing ended: Fri Dec 06 13:18:05 2019
-    Info: Elapsed time: 00:01:57
-    Info: Total CPU time (on all processors): 00:01:56
+    Info: Peak virtual memory: 4765 megabytes
+    Info: Processing ended: Fri Dec 06 18:19:18 2019
+    Info: Elapsed time: 00:01:58
+    Info: Total CPU time (on all processors): 00:01:55
 
 

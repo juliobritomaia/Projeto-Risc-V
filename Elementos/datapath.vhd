@@ -37,6 +37,9 @@ signal outANDport: std_logic;
 signal outPC_mais4: std_logic_vector(11 downto 0);
 signal outINcheck: std_logic_vector(63 downto 0);
 
+signal outExtensorPC: std_logic_vector(63 downto 0);
+signal outExtensorRI: std_logic_vector(63 downto 0);
+
 component macroMemoria port(
 	dataIN: in std_logic_vector(63 downto 0);
 	address: in std_logic_vector(13 downto 0);
