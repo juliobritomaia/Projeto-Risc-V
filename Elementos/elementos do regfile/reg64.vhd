@@ -1,0 +1,17 @@
+LIBRARY ieee ;
+USE ieee.std_logic_1164.all ;
+
+ENTITY reg64 IS PORT(
+		D  : IN   STD_LOGIC_VECTOR(63 DOWNTO 0) ;
+		load, clk: IN STD_LOGIC ;
+		Q  : BUFFER STD_LOGIC_VECTOR(63 DOWNTO 0)
+);
+END ENTITY;
+
+ARCHITECTURE projeto OF reg64 IS
+BEGIN
+
+Q <= 	D WHEN ((LOAD = '1') AND (RISING_EDGE(CLK))) ELSE
+		Q;
+			
+END projeto ;

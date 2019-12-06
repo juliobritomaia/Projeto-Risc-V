@@ -4,122 +4,78 @@ USE ieee.std_logic_1164.all ;
 ENTITY regfile IS PORT(
 	DATA: IN STD_LOGIC_VECTOR(63 DOWNTO 0);
 	rd: IN STD_LOGIC_VECTOR(4 DOWNTO 0);
-	clock,enable : IN STD_LOGIC;
+	clk,enable : IN STD_LOGIC;
 	inst_rs1,inst_rs2: IN STD_LOGIC_VECTOR(4 DOWNTO 0);
 	out_rs1,out_rs2: OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
 );
 END regfile;
 
-ARCHITECTURE projeto OF regfile IS
+architecture projeto of regfile is
 
---SIGNAL enable: STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL 	InX0,OutX0,OutX1,OutX2,OutX3,OutX4,OutX5,OutX6,OutX7,
-			OutX8,OutX9,OutX10,OutX11,OutX12,OutX13,OutX14,OutX15,
-			OutX16,OutX17,OutX18,OutX19,OutX20,OutX21,OutX22,OutX23,
-			OutX24,OutX25,OutX26,OutX27,OutX28,OutX29,OutX30,OutX31: STD_LOGIC_VECTOR(63 DOWNTO 0);
+signal saida_reg: std_logic_vector(2047 downto 0);
+signal load_reg: std_logic_vector(31 downto 0);
 
-component mux32to1
-PORT(
-	x0,x1,x2,x3,x4,x5,x6,x7,
-	x8,x9,x10,x11,x12,x13,x14,x15,
-	x16,x17,x18,x19,x20,x21,x22,x23,
-	x24,x25,x26,x27,x28,x29,x30,x31: IN STD_LOGIC_VECTOR (63 DOWNTO 0);
-	
-	sel : IN STD_LOGIC_VECTOR (4 DOWNTO 0);
-	xOut : OUT STD_LOGIC_VECTOR (63 DOWNTO 0));
+signal zero64: std_logic_vector(63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
+
+component reg64 port (
+	D  : IN   STD_LOGIC_VECTOR(63 DOWNTO 0) ;
+	load, clk: IN STD_LOGIC ;
+	Q  : BUFFER STD_LOGIC_VECTOR(63 DOWNTO 0)
+);
 end component;
 
-component reg32
-	PORT ( D  : IN   STD_LOGIC_VECTOR(63 DOWNTO 0) ;
-		load, clk: IN STD_LOGIC ;
-		Q  : BUFFER STD_LOGIC_VECTOR(63 DOWNTO 0) ) ;
+component load_controler port (
+	address: in std_logic_vector(4 downto 0);
+	enable: in std_logic;
+	load: out std_logic_vector(31 downto 0)
+);
 end component;
 
-BEGIN
-RegX0: reg32 port map(D => InX0, load => enable and ( not(rd(4)) and not(rd(3)) and not(rd(2)) and not(rd(1)) and not(rd(0)) ), clk => clock, Q => OutX0);
-RegX1: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and not(rd(3)) and not(rd(2)) and not(rd(1)) and (rd(0)) ), clk => clock, Q => OutX1);
-RegX2: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and not(rd(3)) and not(rd(2)) and (rd(1)) and not(rd(0)) ), clk => clock, Q => OutX2);
-RegX3: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and not(rd(3)) and not(rd(2)) and (rd(1)) and (rd(0)) ), clk => clock, Q => OutX3);
-RegX4: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and not(rd(3)) and (rd(2)) and not(rd(1)) and not(rd(0)) ), clk => clock, Q => OutX4);
-RegX5: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and not(rd(3)) and (rd(2)) and not(rd(1)) and (rd(0)) ), clk => clock, Q => OutX5);
-RegX6: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and not(rd(3)) and (rd(2)) and (rd(1)) and not(rd(0)) ), clk => clock, Q => OutX6);
-RegX7: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and not(rd(3)) and (rd(2)) and (rd(1)) and (rd(0)) ), clk => clock, Q => OutX7);
-RegX8: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and (rd(3)) and not(rd(2)) and not(rd(1)) and not(rd(0)) ), clk => clock, Q => OutX8);
-RegX9: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and (rd(3)) and not(rd(2)) and not(rd(1)) and (rd(0)) ), clk => clock, Q => OutX9);
-RegX10: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and (rd(3)) and not(rd(2)) and (rd(1)) and not(rd(0)) ), clk => clock, Q => OutX10);
-RegX11: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and (rd(3)) and not(rd(2)) and (rd(1)) and (rd(0)) ), clk => clock, Q => OutX11);
-RegX12: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and (rd(3)) and (rd(2)) and not(rd(1)) and not(rd(0)) ), clk => clock, Q => OutX12);
-RegX13: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and (rd(3)) and (rd(2)) and not(rd(1)) and (rd(0)) ), clk => clock, Q => OutX13);
-RegX14: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and (rd(3)) and (rd(2)) and (rd(1)) and not(rd(0)) ), clk => clock, Q => OutX14);
-RegX15: reg32 port map(D => DATA, load => enable and ( not(rd(4)) and (rd(3)) and (rd(2)) and (rd(1)) and (rd(0)) ), clk => clock, Q => OutX15);
-RegX16: reg32 port map(D => DATA, load => enable and ( (rd(4)) and not(rd(3)) and not(rd(2)) and not(rd(1)) and not(rd(0)) ), clk => clock, Q => OutX16);
-RegX17: reg32 port map(D => DATA, load => enable and ( (rd(4)) and not(rd(3)) and not(rd(2)) and not(rd(1)) and (rd(0)) ), clk => clock, Q => OutX17);
-RegX18: reg32 port map(D => DATA, load => enable and ( (rd(4)) and not(rd(3)) and not(rd(2)) and (rd(1)) and not(rd(0)) ), clk => clock, Q => OutX18);
-RegX19: reg32 port map(D => DATA, load => enable and ( (rd(4)) and not(rd(3)) and not(rd(2)) and (rd(1)) and (rd(0)) ), clk => clock, Q => OutX19);
-RegX20: reg32 port map(D => DATA, load => enable and ( (rd(4)) and not(rd(3)) and (rd(2)) and not(rd(1)) and not(rd(0)) ), clk => clock, Q => OutX20);
-RegX21: reg32 port map(D => DATA, load => enable and ( (rd(4)) and not(rd(3)) and (rd(2)) and not(rd(1)) and (rd(0)) ), clk => clock, Q => OutX21);
-RegX22: reg32 port map(D => DATA, load => enable and ( (rd(4)) and not(rd(3)) and (rd(2)) and (rd(1)) and not(rd(0)) ), clk => clock, Q => OutX22);
-RegX23: reg32 port map(D => DATA, load => enable and ( (rd(4)) and not(rd(3)) and (rd(2)) and (rd(1)) and (rd(0)) ), clk => clock, Q => OutX23);
-RegX24: reg32 port map(D => DATA, load => enable and ( (rd(4)) and (rd(3)) and not(rd(2)) and not(rd(1)) and not(rd(0)) ), clk => clock, Q => OutX24);
-RegX25: reg32 port map(D => DATA, load => enable and ( (rd(4)) and (rd(3)) and not(rd(2)) and not(rd(1)) and (rd(0)) ), clk => clock, Q => OutX25);
-RegX26: reg32 port map(D => DATA, load => enable and ( (rd(4)) and (rd(3)) and not(rd(2)) and (rd(1)) and not(rd(0)) ), clk => clock, Q => OutX26);
-RegX27: reg32 port map(D => DATA, load => enable and ( (rd(4)) and (rd(3)) and not(rd(2)) and (rd(1)) and (rd(0)) ), clk => clock, Q => OutX27);
-RegX28: reg32 port map(D => DATA, load => enable and ( (rd(4)) and (rd(3)) and (rd(2)) and not(rd(1)) and not(rd(0)) ), clk => clock, Q => OutX28);
-RegX29: reg32 port map(D => DATA, load => enable and ( (rd(4)) and (rd(3)) and (rd(2)) and not(rd(1)) and (rd(0)) ), clk => clock, Q => OutX29);
-RegX30: reg32 port map(D => DATA, load => enable and ( (rd(4)) and (rd(3)) and (rd(2)) and (rd(1)) and not(rd(0)) ), clk => clock, Q => OutX30);
-RegX31: reg32 port map(D => DATA, load => enable and ( (rd(4)) and (rd(3)) and (rd(2)) and (rd(1)) and (rd(0)) ), clk => clock, Q => OutX31);
-
-Mux_rs1: mux32to1 port map (
-	x0 => OutX0, x1 => OutX1, x2 => OutX2, x3 => OutX3, x4 => OutX4, x5 => OutX5, x6 => OutX6, x7 => OutX7,
-	x8 => OutX8, x9 => OutX9, x10 => OutX10, x11 => OutX11, x12 => OutX12, x13 => OutX13, x14 => OutX14, x15 => OutX15,
-	x16 => OutX16, x17 => OutX17, x18 => OutX18, x19 => OutX19, x20 => OutX20, x21 => OutX21, x22 => OutX22, x23 => OutX23,
-	x24 => OutX24, x25 => OutX25, x26 => OutX26, x27 => OutX27, x28 => OutX28, x29 => OutX29, x30 => OutX30, x31 => OutX31,
-	sel  => inst_rs1,
-	xOut  => out_rs1
+component banco_muxes port (
+		entrada  : in std_logic_vector(2047 DOWNTO 0) ;
+		address  : in std_logic_vector(4 DOWNTO 0) ;
+		saida  : BUFFER STD_LOGIC_VECTOR(63 DOWNTO 0)
 );
+end component;
 
-Mux_rs2: mux32to1 port map (
-	x0 => OutX0, x1 => OutX1, x2 => OutX2, x3 => OutX3, x4 => OutX4, x5 => OutX5, x6 => OutX6, x7 => OutX7,
-	x8 => OutX8, x9 => OutX9, x10 => OutX10, x11 => OutX11, x12 => OutX12, x13 => OutX13, x14 => OutX14, x15 => OutX15,
-	x16 => OutX16, x17 => OutX17, x18 => OutX18, x19 => OutX19, x20 => OutX20, x21 => OutX21, x22 => OutX22, x23 => OutX23,
-	x24 => OutX24, x25 => OutX25, x26 => OutX26, x27 => OutX27, x28 => OutX28, x29 => OutX29, x30 => OutX30, x31 => OutX31,
-	sel  => inst_rs2,
-	xOut  => out_rs2
-);
-InX0 <= "0000000000000000000000000000000000000000000000000000000000000000";
---	WITH rd SELECT
---	enable <=
---					"00000000000000000000000000000001" when "00000",
---					"00000000000000000000000000000010" when "00001",
---					"00000000000000000000000000000100" when "00010",
---					"00000000000000000000000000001000" when "00011",
---					"00000000000000000000000000010000" when "00100",
---					"00000000000000000000000000100000" when "00101",
---					"00000000000000000000000001000000" when "00110",
---					"00000000000000000000000010000000" when "00111",
---					"00000000000000000000000100000000" when "01000",
---					"00000000000000000000001000000000" when "01001",
---					"00000000000000000000010000000000" when "01010",
---					"00000000000000000000100000000000" when "01011",
---					"00000000000000000001000000000000" when "01100",
---					"00000000000000000010000000000000" when "01101",
---					"00000000000000000100000000000000" when "01110",
---					"00000000000000001000000000000000" when "01111",
---					"00000000000000010000000000000000" when "10000",
---					"00000000000000100000000000000000" when "10001",
---					"00000000000001000000000000000000" when "10010",
---					"00000000000010000000000000000000" when "10011",
---					"00000000000100000000000000000000" when "10100",
---					"00000000001000000000000000000000" when "10101",
---					"00000000010000000000000000000000" when "10110",
---					"00000000100000000000000000000000" when "10111",
---					"00000001000000000000000000000000" when "11000",
---					"00000010000000000000000000000000" when "11001",
---					"00000100000000000000000000000000" when "11010",
---					"00001000000000000000000000000000" when "11011",
---					"00010000000000000000000000000000" when "11100",
---					"00100000000000000000000000000000" when "11101",
---					"01000000000000000000000000000000" when "11110",
---					"10000000000000000000000000000000" when "11111",
---					"00000000000000000000000000000000" when others;
-END projeto ;
+begin
+
+regx0: reg64 port map (D => zero64, load => load_reg(0), clk => clk, Q  => saida_reg(63 downto 0) );
+regx1: reg64 port map (D => DATA, load => load_reg(1), clk => clk, Q  => saida_reg(127 downto 64) );
+regx2: reg64 port map (D => DATA, load => load_reg(2), clk => clk, Q  => saida_reg(191 downto 128) );
+regx3: reg64 port map (D => DATA, load => load_reg(3), clk => clk, Q  => saida_reg(255 downto 192) );
+regx4: reg64 port map (D => DATA, load => load_reg(4), clk => clk, Q  => saida_reg(319 downto 256) );
+regx5: reg64 port map (D => DATA, load => load_reg(5), clk => clk, Q  => saida_reg(383 downto 320) );
+regx6: reg64 port map (D => DATA, load => load_reg(6), clk => clk, Q  => saida_reg(447 downto 384) );
+regx7: reg64 port map (D => DATA, load => load_reg(7), clk => clk, Q  => saida_reg(511 downto 448) );
+regx8: reg64 port map (D => DATA, load => load_reg(8), clk => clk, Q  => saida_reg(575 downto 512) );
+regx9: reg64 port map (D => DATA, load => load_reg(9), clk => clk, Q  => saida_reg(639 downto 576) );
+regx10: reg64 port map (D => DATA, load => load_reg(10), clk => clk, Q  => saida_reg(703 downto 640) );
+regx11: reg64 port map (D => DATA, load => load_reg(11), clk => clk, Q  => saida_reg(767 downto 704) );
+regx12: reg64 port map (D => DATA, load => load_reg(12), clk => clk, Q  => saida_reg(831 downto 768) );
+regx13: reg64 port map (D => DATA, load => load_reg(13), clk => clk, Q  => saida_reg(895 downto 832) );
+regx14: reg64 port map (D => DATA, load => load_reg(14), clk => clk, Q  => saida_reg(959 downto 896) );
+regx15: reg64 port map (D => DATA, load => load_reg(15), clk => clk, Q  => saida_reg(1023 downto 960) );
+regx16: reg64 port map (D => DATA, load => load_reg(16), clk => clk, Q  => saida_reg(1087 downto 1024) );
+regx17: reg64 port map (D => DATA, load => load_reg(17), clk => clk, Q  => saida_reg(1151 downto 1088) );
+regx18: reg64 port map (D => DATA, load => load_reg(18), clk => clk, Q  => saida_reg(1215 downto 1152) );
+regx19: reg64 port map (D => DATA, load => load_reg(19), clk => clk, Q  => saida_reg(1279 downto 1216) );
+regx20: reg64 port map (D => DATA, load => load_reg(20), clk => clk, Q  => saida_reg(1343 downto 1280) );
+regx21: reg64 port map (D => DATA, load => load_reg(21), clk => clk, Q  => saida_reg(1407 downto 1344) );
+regx22: reg64 port map (D => DATA, load => load_reg(22), clk => clk, Q  => saida_reg(1471 downto 1408) );
+regx23: reg64 port map (D => DATA, load => load_reg(23), clk => clk, Q  => saida_reg(1535 downto 1472) );
+regx24: reg64 port map (D => DATA, load => load_reg(24), clk => clk, Q  => saida_reg(1599 downto 1536) );
+regx25: reg64 port map (D => DATA, load => load_reg(25), clk => clk, Q  => saida_reg(1663 downto 1600) );
+regx26: reg64 port map (D => DATA, load => load_reg(26), clk => clk, Q  => saida_reg(1727 downto 1664) );
+regx27: reg64 port map (D => DATA, load => load_reg(27), clk => clk, Q  => saida_reg(1791 downto 1728) );
+regx28: reg64 port map (D => DATA, load => load_reg(28), clk => clk, Q  => saida_reg(1855 downto 1792) );
+regx29: reg64 port map (D => DATA, load => load_reg(29), clk => clk, Q  => saida_reg(1919 downto 1856) );
+regx30: reg64 port map (D => DATA, load => load_reg(30), clk => clk, Q  => saida_reg(1983 downto 1920) );
+regx31: reg64 port map (D => DATA, load => load_reg(31), clk => clk, Q  => saida_reg(2047 downto 1984) );
+
+controlador_loads: load_controler port map (	address => rd, enable => enable, load => load_reg);
+
+muxes_rs1: banco_muxes port map (entrada => saida_reg, address => inst_rs1, saida => out_rs1);
+muxes_rs2: banco_muxes port map (entrada => saida_reg, address => inst_rs2, saida => out_rs2);
+
+end projeto ;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for datapath
-Fri Dec 06 10:08:59 2019
+Fri Dec 06 13:18:05 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  29. Parameter Settings for User Entity Instance: macroMemoria:memoriaPrograma|UnidadeDeMemoria:memoria7|altsyncram:altsyncram_component
  30. altsyncram Parameter Settings by Entity Instance
  31. Port Connectivity Checks: "mux3:mux3_1"
- 32. Port Connectivity Checks: "regfile:regfile1|reg32:RegX0"
+ 32. Port Connectivity Checks: "regfile:regfile1|reg64:regx0"
  33. Elapsed Time Per Partition
  34. Analysis & Synthesis Messages
 
@@ -65,13 +65,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 06 10:08:59 2019           ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 06 13:18:05 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; datapath                                        ;
 ; Top-level Entity Name              ; datapath                                        ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 11,589                                          ;
-;     Total combinational functions  ; 9,637                                           ;
+; Total logic elements               ; 11,611                                          ;
+;     Total combinational functions  ; 9,659                                           ;
 ;     Dedicated logic registers      ; 2,028                                           ;
 ; Total registers                    ; 2028                                            ;
 ; Total pins                         ; 208                                             ;
@@ -183,10 +183,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path                       ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                ; Library ;
 +--------------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
+; ../Elementos/elementos do regfile/reg64.vhd            ; yes             ; User VHDL File               ; D:/jygos/Projeto Risc V/Elementos/elementos do regfile/reg64.vhd            ;         ;
+; ../Elementos/elementos do regfile/mux4to1_64.vhd       ; yes             ; User VHDL File               ; D:/jygos/Projeto Risc V/Elementos/elementos do regfile/mux4to1_64.vhd       ;         ;
+; ../Elementos/elementos do regfile/mux2to1_64.vhd       ; yes             ; User VHDL File               ; D:/jygos/Projeto Risc V/Elementos/elementos do regfile/mux2to1_64.vhd       ;         ;
+; ../Elementos/elementos do regfile/load_controler.vhd   ; yes             ; User VHDL File               ; D:/jygos/Projeto Risc V/Elementos/elementos do regfile/load_controler.vhd   ;         ;
+; ../Elementos/elementos do regfile/banco_muxes.vhd      ; yes             ; User VHDL File               ; D:/jygos/Projeto Risc V/Elementos/elementos do regfile/banco_muxes.vhd      ;         ;
 ; ../Elementos/datapath.vhd                              ; yes             ; User VHDL File               ; D:/jygos/Projeto Risc V/Elementos/datapath.vhd                              ;         ;
 ; ../Elementos/elementos do regfile/regfile.vhd          ; yes             ; User VHDL File               ; D:/jygos/Projeto Risc V/Elementos/elementos do regfile/regfile.vhd          ;         ;
-; ../Elementos/elementos do regfile/reg32.vhd            ; yes             ; User VHDL File               ; D:/jygos/Projeto Risc V/Elementos/elementos do regfile/reg32.vhd            ;         ;
-; ../Elementos/elementos do regfile/mux32to1.vhd         ; yes             ; User VHDL File               ; D:/jygos/Projeto Risc V/Elementos/elementos do regfile/mux32to1.vhd         ;         ;
 ; ../Elementos/elementos do datapath/RI.vhd              ; yes             ; User VHDL File               ; D:/jygos/Projeto Risc V/Elementos/elementos do datapath/RI.vhd              ;         ;
 ; ../Elementos/elementos do datapath/PC.vhd              ; yes             ; User VHDL File               ; D:/jygos/Projeto Risc V/Elementos/elementos do datapath/PC.vhd              ;         ;
 ; ../Elementos/elementos do datapath/outCheck.vhd        ; yes             ; User VHDL File               ; D:/jygos/Projeto Risc V/Elementos/elementos do datapath/outCheck.vhd        ;         ;
@@ -224,16 +227,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 11,589 ;
+; Estimated Total logic elements              ; 11,611 ;
 ;                                             ;        ;
-; Total combinational functions               ; 9637   ;
+; Total combinational functions               ; 9659   ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 6609   ;
-;     -- 3 input functions                    ; 2851   ;
-;     -- <=2 input functions                  ; 177    ;
+;     -- 4 input functions                    ; 6588   ;
+;     -- 3 input functions                    ; 2908   ;
+;     -- <=2 input functions                  ; 163    ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 9008   ;
+;     -- normal mode                          ; 9030   ;
 ;     -- arithmetic mode                      ; 629    ;
 ;                                             ;        ;
 ; Total registers                             ; 2028   ;
@@ -245,8 +248,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0      ;
 ; Maximum fan-out node                        ; clk    ;
 ; Maximum fan-out                             ; 2092   ;
-; Total fan-out                               ; 42438  ;
-; Average fan-out                             ; 3.56   ;
+; Total fan-out                               ; 42497  ;
+; Average fan-out                             ; 3.55   ;
 +---------------------------------------------+--------+
 
 
@@ -255,13 +258,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                             ; Library Name ;
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |datapath                                     ; 9637 (13)         ; 2028 (0)     ; 131072      ; 0            ; 0       ; 0         ; 208  ; 0            ; |datapath                                                                                                                       ; work         ;
+; |datapath                                     ; 9659 (13)         ; 2028 (0)     ; 131072      ; 0            ; 0       ; 0         ; 208  ; 0            ; |datapath                                                                                                                       ; work         ;
 ;    |PC:PC1|                                   ; 25 (25)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|PC:PC1                                                                                                                ; work         ;
 ;    |RI:RI1|                                   ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|RI:RI1                                                                                                                ; work         ;
 ;    |addressSignal:addressSignal_1|            ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|addressSignal:addressSignal_1                                                                                         ; work         ;
-;    |alu1:alu1_1|                              ; 5046 (5046)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu1:alu1_1                                                                                                           ; work         ;
+;    |alu1:alu1_1|                              ; 5047 (5047)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu1:alu1_1                                                                                                           ; work         ;
 ;    |branch:branch1|                           ; 171 (171)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|branch:branch1                                                                                                        ; work         ;
-;    |macroMemoria:memoriaPrograma|             ; 642 (0)           ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|macroMemoria:memoriaPrograma                                                                                          ; work         ;
+;    |macroMemoria:memoriaPrograma|             ; 638 (0)           ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|macroMemoria:memoriaPrograma                                                                                          ; work         ;
 ;       |UnidadeDeMemoria:memoria0|             ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|macroMemoria:memoriaPrograma|UnidadeDeMemoria:memoria0                                                                ; work         ;
 ;          |altsyncram:altsyncram_component|    ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|macroMemoria:memoriaPrograma|UnidadeDeMemoria:memoria0|altsyncram:altsyncram_component                                ; work         ;
 ;             |altsyncram_m7a1:auto_generated|  ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|macroMemoria:memoriaPrograma|UnidadeDeMemoria:memoria0|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated ; work         ;
@@ -293,48 +296,51 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |mux2to1_11:mux3|                    ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|macroMemoria:memoriaPrograma|addressControler:controlador_endereco|mux2to1_11:mux3                                    ; work         ;
 ;          |mux2to1_11:mux4|                    ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|macroMemoria:memoriaPrograma|addressControler:controlador_endereco|mux2to1_11:mux4                                    ; work         ;
 ;          |mux2to1_11:mux5|                    ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|macroMemoria:memoriaPrograma|addressControler:controlador_endereco|mux2to1_11:mux5                                    ; work         ;
-;       |concatenador:concatenador1|            ; 347 (347)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|macroMemoria:memoriaPrograma|concatenador:concatenador1                                                               ; work         ;
+;       |concatenador:concatenador1|            ; 343 (343)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|macroMemoria:memoriaPrograma|concatenador:concatenador1                                                               ; work         ;
 ;       |deslocador:deslocador1|                ; 192 (192)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|macroMemoria:memoriaPrograma|deslocador:deslocador1                                                                   ; work         ;
 ;       |writerControler:controlador_escrita|   ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|macroMemoria:memoriaPrograma|writerControler:controlador_escrita                                                      ; work         ;
 ;    |mux0:mux0_1|                              ; 852 (852)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux0:mux0_1                                                                                                           ; work         ;
-;    |mux1:mux1_1|                              ; 71 (71)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux1:mux1_1                                                                                                           ; work         ;
-;    |mux2:mux2_1|                              ; 66 (66)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux2:mux2_1                                                                                                           ; work         ;
+;    |mux1:mux1_1|                              ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux1:mux1_1                                                                                                           ; work         ;
+;    |mux2:mux2_1|                              ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux2:mux2_1                                                                                                           ; work         ;
 ;    |mux3:mux3_1|                              ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux3:mux3_1                                                                                                           ; work         ;
 ;    |outCheck:checkOut|                        ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|outCheck:checkOut                                                                                                     ; work         ;
-;    |regfile:regfile1|                         ; 2641 (38)         ; 1984 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1                                                                                                      ; work         ;
-;       |mux32to1:Mux_rs1|                      ; 1297 (1297)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|mux32to1:Mux_rs1                                                                                     ; work         ;
-;       |mux32to1:Mux_rs2|                      ; 1306 (1306)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|mux32to1:Mux_rs2                                                                                     ; work         ;
-;       |reg32:RegX10|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX10                                                                                         ; work         ;
-;       |reg32:RegX11|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX11                                                                                         ; work         ;
-;       |reg32:RegX12|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX12                                                                                         ; work         ;
-;       |reg32:RegX13|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX13                                                                                         ; work         ;
-;       |reg32:RegX14|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX14                                                                                         ; work         ;
-;       |reg32:RegX15|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX15                                                                                         ; work         ;
-;       |reg32:RegX16|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX16                                                                                         ; work         ;
-;       |reg32:RegX17|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX17                                                                                         ; work         ;
-;       |reg32:RegX18|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX18                                                                                         ; work         ;
-;       |reg32:RegX19|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX19                                                                                         ; work         ;
-;       |reg32:RegX1|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX1                                                                                          ; work         ;
-;       |reg32:RegX20|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX20                                                                                         ; work         ;
-;       |reg32:RegX21|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX21                                                                                         ; work         ;
-;       |reg32:RegX22|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX22                                                                                         ; work         ;
-;       |reg32:RegX23|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX23                                                                                         ; work         ;
-;       |reg32:RegX24|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX24                                                                                         ; work         ;
-;       |reg32:RegX25|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX25                                                                                         ; work         ;
-;       |reg32:RegX26|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX26                                                                                         ; work         ;
-;       |reg32:RegX27|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX27                                                                                         ; work         ;
-;       |reg32:RegX28|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX28                                                                                         ; work         ;
-;       |reg32:RegX29|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX29                                                                                         ; work         ;
-;       |reg32:RegX2|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX2                                                                                          ; work         ;
-;       |reg32:RegX30|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX30                                                                                         ; work         ;
-;       |reg32:RegX31|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX31                                                                                         ; work         ;
-;       |reg32:RegX3|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX3                                                                                          ; work         ;
-;       |reg32:RegX4|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX4                                                                                          ; work         ;
-;       |reg32:RegX5|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX5                                                                                          ; work         ;
-;       |reg32:RegX6|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX6                                                                                          ; work         ;
-;       |reg32:RegX7|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX7                                                                                          ; work         ;
-;       |reg32:RegX8|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX8                                                                                          ; work         ;
-;       |reg32:RegX9|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX9                                                                                          ; work         ;
+;    |regfile:regfile1|                         ; 2674 (0)          ; 1984 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1                                                                                                      ; work         ;
+;       |banco_muxes:muxes_rs1|                 ; 1306 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|banco_muxes:muxes_rs1                                                                                ; work         ;
+;          |mux2to1_64:mux10|                   ; 1306 (1306)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|banco_muxes:muxes_rs1|mux2to1_64:mux10                                                               ; work         ;
+;       |banco_muxes:muxes_rs2|                 ; 1330 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|banco_muxes:muxes_rs2                                                                                ; work         ;
+;          |mux2to1_64:mux10|                   ; 1330 (1330)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10                                                               ; work         ;
+;       |load_controler:controlador_loads|      ; 38 (38)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|load_controler:controlador_loads                                                                     ; work         ;
+;       |reg64:regx10|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx10                                                                                         ; work         ;
+;       |reg64:regx11|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx11                                                                                         ; work         ;
+;       |reg64:regx12|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx12                                                                                         ; work         ;
+;       |reg64:regx13|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx13                                                                                         ; work         ;
+;       |reg64:regx14|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx14                                                                                         ; work         ;
+;       |reg64:regx15|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx15                                                                                         ; work         ;
+;       |reg64:regx16|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx16                                                                                         ; work         ;
+;       |reg64:regx17|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx17                                                                                         ; work         ;
+;       |reg64:regx18|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx18                                                                                         ; work         ;
+;       |reg64:regx19|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx19                                                                                         ; work         ;
+;       |reg64:regx1|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx1                                                                                          ; work         ;
+;       |reg64:regx20|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx20                                                                                         ; work         ;
+;       |reg64:regx21|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx21                                                                                         ; work         ;
+;       |reg64:regx22|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx22                                                                                         ; work         ;
+;       |reg64:regx23|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx23                                                                                         ; work         ;
+;       |reg64:regx24|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx24                                                                                         ; work         ;
+;       |reg64:regx25|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx25                                                                                         ; work         ;
+;       |reg64:regx26|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx26                                                                                         ; work         ;
+;       |reg64:regx27|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx27                                                                                         ; work         ;
+;       |reg64:regx28|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx28                                                                                         ; work         ;
+;       |reg64:regx29|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx29                                                                                         ; work         ;
+;       |reg64:regx2|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx2                                                                                          ; work         ;
+;       |reg64:regx30|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx30                                                                                         ; work         ;
+;       |reg64:regx31|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx31                                                                                         ; work         ;
+;       |reg64:regx3|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx3                                                                                          ; work         ;
+;       |reg64:regx4|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx4                                                                                          ; work         ;
+;       |reg64:regx5|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx5                                                                                          ; work         ;
+;       |reg64:regx6|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx6                                                                                          ; work         ;
+;       |reg64:regx7|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx7                                                                                          ; work         ;
+;       |reg64:regx8|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx8                                                                                          ; work         ;
+;       |reg64:regx9|                           ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg64:regx9                                                                                          ; work         ;
 +-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -481,14 +487,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                               ;
-+-----------------------------------------+----------------------------------------+
-; Register name                           ; Reason for Removal                     ;
-+-----------------------------------------+----------------------------------------+
-; regfile:regfile1|reg32:RegX0|AUX[0..63] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 64  ;                                        ;
-+-----------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; regfile:regfile1|reg64:regx0|Q[0..63]  ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 64 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -511,27 +517,29 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |datapath|PC:PC1|pcOUT[11]                                                  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftLeft2                                            ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |datapath|mux3:mux3_1|Mux1                                                  ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |datapath|mux3:mux3_1|Mux7                                                  ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |datapath|PC:PC1|pcOUT[9]                                                   ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; No         ; |datapath|regfile:regfile1|load_controler:controlador_loads|load[29]        ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; No         ; |datapath|regfile:regfile1|load_controler:controlador_loads|load[15]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftRight0                                           ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |datapath|mux3:mux3_1|Mux10                                                 ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |datapath|mux3:mux3_1|Mux11                                                 ;
 ; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftLeft2                                            ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux62                                                 ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux0                                                  ;
 ; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftRight0                                           ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |datapath|macroMemoria:memoriaPrograma|concatenador:concatenador1|saida[22] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |datapath|macroMemoria:memoriaPrograma|concatenador:concatenador1|saida[8]  ;
-; 32:1               ; 64 bits   ; 1344 LEs      ; 1280 LEs             ; 64 LEs                 ; No         ; |datapath|regfile:regfile1|mux32to1:Mux_rs1|Mux53                           ;
-; 32:1               ; 64 bits   ; 1344 LEs      ; 1280 LEs             ; 64 LEs                 ; No         ; |datapath|regfile:regfile1|mux32to1:Mux_rs2|Mux44                           ;
-; 32:1               ; 63 bits   ; 1323 LEs      ; 441 LEs              ; 882 LEs                ; No         ; |datapath|alu1:alu1_1|Mux2458                                               ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftRight0                                           ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftLeft2                                            ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |datapath|macroMemoria:memoriaPrograma|concatenador:concatenador1|saida[41] ;
-; 28:1               ; 9 bits    ; 162 LEs       ; 108 LEs              ; 54 LEs                 ; No         ; |datapath|alu1:alu1_1|Mux187                                                ;
-; 28:1               ; 2 bits    ; 36 LEs        ; 26 LEs               ; 10 LEs                 ; No         ; |datapath|alu1:alu1_1|Mux178                                                ;
-; 32:1               ; 18 bits   ; 378 LEs       ; 270 LEs              ; 108 LEs                ; No         ; |datapath|mux0:mux0_1|Mux45                                                 ;
-; 33:1               ; 16 bits   ; 352 LEs       ; 256 LEs              ; 96 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux30                                                 ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |datapath|macroMemoria:memoriaPrograma|concatenador:concatenador1|saida[29] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |datapath|macroMemoria:memoriaPrograma|concatenador:concatenador1|saida[9]  ;
+; 32:1               ; 63 bits   ; 1323 LEs      ; 441 LEs              ; 882 LEs                ; No         ; |datapath|alu1:alu1_1|Mux675                                                ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftLeft2                                            ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftRight0                                           ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |datapath|macroMemoria:memoriaPrograma|concatenador:concatenador1|saida[38] ;
+; 28:1               ; 9 bits    ; 162 LEs       ; 108 LEs              ; 54 LEs                 ; No         ; |datapath|alu1:alu1_1|Mux181                                                ;
+; 28:1               ; 2 bits    ; 36 LEs        ; 26 LEs               ; 10 LEs                 ; No         ; |datapath|alu1:alu1_1|Mux179                                                ;
+; 32:1               ; 18 bits   ; 378 LEs       ; 270 LEs              ; 108 LEs                ; No         ; |datapath|mux0:mux0_1|Mux37                                                 ;
+; 33:1               ; 16 bits   ; 352 LEs       ; 256 LEs              ; 96 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux28                                                 ;
+; 32:1               ; 64 bits   ; 1344 LEs      ; 1280 LEs             ; 64 LEs                 ; No         ; |datapath|regfile:regfile1|banco_muxes:muxes_rs1|mux2to1_64:mux10|S[5]      ;
+; 32:1               ; 64 bits   ; 1344 LEs      ; 1280 LEs             ; 64 LEs                 ; No         ; |datapath|regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]     ;
 ; 34:1               ; 8 bits    ; 176 LEs       ; 128 LEs              ; 48 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux15                                                 ;
-; 35:1               ; 4 bits    ; 92 LEs        ; 68 LEs               ; 24 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux7                                                  ;
+; 35:1               ; 4 bits    ; 92 LEs        ; 68 LEs               ; 24 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux6                                                  ;
 ; 36:1               ; 2 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux3                                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
 
@@ -1203,7 +1211,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------+
-; Port Connectivity Checks: "regfile:regfile1|reg32:RegX0" ;
+; Port Connectivity Checks: "regfile:regfile1|reg64:regx0" ;
 +------+-------+----------+--------------------------------+
 ; Port ; Type  ; Severity ; Details                        ;
 +------+-------+----------+--------------------------------+
@@ -1216,7 +1224,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:59     ;
+; Top            ; 00:01:52     ;
 +----------------+--------------+
 
 
@@ -1226,9 +1234,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Dec 06 10:06:55 2019
+    Info: Processing started: Fri Dec 06 13:16:08 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off datapath -c datapath
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/elementos do regfile/reg64.vhd
+    Info (12022): Found design unit 1: reg64-projeto
+    Info (12023): Found entity 1: reg64
+Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/elementos do regfile/mux4to1_64.vhd
+    Info (12022): Found design unit 1: mux4to1_64-projeto
+    Info (12023): Found entity 1: mux4to1_64
+Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/elementos do regfile/mux2to1_64.vhd
+    Info (12022): Found design unit 1: mux2to1_64-projeto
+    Info (12023): Found entity 1: mux2to1_64
+Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/elementos do regfile/load_controler.vhd
+    Info (12022): Found design unit 1: load_controler-projeto
+    Info (12023): Found entity 1: load_controler
+Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/elementos do regfile/banco_muxes.vhd
+    Info (12022): Found design unit 1: banco_muxes-projeto
+    Info (12023): Found entity 1: banco_muxes
 Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/datapath.vhd
     Info (12022): Found design unit 1: datapath-hardware
     Info (12023): Found entity 1: datapath
@@ -1238,12 +1261,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file /jygos/
 Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/elementos do regfile/regfile.vhd
     Info (12022): Found design unit 1: regfile-projeto
     Info (12023): Found entity 1: regfile
-Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/elementos do regfile/reg32.vhd
-    Info (12022): Found design unit 1: reg32-projeto
-    Info (12023): Found entity 1: reg32
-Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/elementos do regfile/mux32to1.vhd
-    Info (12022): Found design unit 1: mux32to1-projeto
-    Info (12023): Found entity 1: mux32to1
+Warning (12019): Can't analyze file -- file ../Elementos/elementos do regfile/reg32.vhd is missing
+Warning (12019): Can't analyze file -- file ../Elementos/elementos do regfile/mux32to1.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/elementos do datapath/ri.vhd
     Info (12022): Found design unit 1: RI-hardware
     Info (12023): Found entity 1: RI
@@ -1481,8 +1500,13 @@ Info (10041): Inferred latch for "saida[62]" at concatenador.vhd(24)
 Info (10041): Inferred latch for "saida[63]" at concatenador.vhd(24)
 Info (12128): Elaborating entity "RI" for hierarchy "RI:RI1"
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:regfile1"
-Info (12128): Elaborating entity "reg32" for hierarchy "regfile:regfile1|reg32:RegX0"
-Info (12128): Elaborating entity "mux32to1" for hierarchy "regfile:regfile1|mux32to1:Mux_rs1"
+Warning (10540): VHDL Signal Declaration warning at regfile.vhd(18): used explicit default value for signal "zero64" because signal was never assigned a value
+Info (12128): Elaborating entity "reg64" for hierarchy "regfile:regfile1|reg64:regx0"
+Info (12128): Elaborating entity "load_controler" for hierarchy "regfile:regfile1|load_controler:controlador_loads"
+Warning (10540): VHDL Signal Declaration warning at load_controler.vhd(14): used explicit default value for signal "valor" because signal was never assigned a value
+Info (12128): Elaborating entity "banco_muxes" for hierarchy "regfile:regfile1|banco_muxes:muxes_rs1"
+Info (12128): Elaborating entity "mux4to1_64" for hierarchy "regfile:regfile1|banco_muxes:muxes_rs1|mux4to1_64:mux0"
+Info (12128): Elaborating entity "mux2to1_64" for hierarchy "regfile:regfile1|banco_muxes:muxes_rs1|mux2to1_64:mux10"
 Info (12128): Elaborating entity "PC" for hierarchy "PC:PC1"
 Info (12128): Elaborating entity "mux3" for hierarchy "mux3:mux3_1"
 Info (10041): Inferred latch for "S[0]" at mux3.vhd(21)
@@ -1653,133 +1677,133 @@ Info (10041): Inferred latch for "aux64[61]" at alu1.vhd(21)
 Info (10041): Inferred latch for "aux64[62]" at alu1.vhd(21)
 Info (10041): Inferred latch for "aux64[63]" at alu1.vhd(21)
 Warning (13012): Latch outCheck:checkOut|S[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[16] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[24] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[25] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[26] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[27] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[28] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[29] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[30] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[31] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux32~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[31]~synth
 Warning (13012): Latch outCheck:checkOut|S[32] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[33] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[34] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[35] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[36] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[37] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[38] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[39] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[40] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[41] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[42] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[43] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[44] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[45] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[46] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[47] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[48] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[49] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[50] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[51] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[52] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[53] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[54] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[55] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[56] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[57] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[58] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[59] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[60] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[61] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[62] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux44~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[33]~synth
 Warning (13012): Latch outCheck:checkOut|S[63] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux0~synth
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|banco_muxes:muxes_rs2|mux2to1_64:mux10|S[63]~synth
 Warning (13012): Latch addressSignal:addressSignal_1|S[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[4]
 Warning (13012): Latch addressSignal:addressSignal_1|S[1] has unsafe behavior
@@ -2218,15 +2242,15 @@ Warning (13012): Latch mux3:mux3_1|S[11] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 11925 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 11947 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 115 input pins
     Info (21059): Implemented 93 output pins
-    Info (21061): Implemented 11653 logic cells
+    Info (21061): Implemented 11675 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 569 warnings
-    Info: Peak virtual memory: 4747 megabytes
-    Info: Processing ended: Fri Dec 06 10:08:59 2019
-    Info: Elapsed time: 00:02:04
-    Info: Total CPU time (on all processors): 00:02:03
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 573 warnings
+    Info: Peak virtual memory: 4769 megabytes
+    Info: Processing ended: Fri Dec 06 13:18:05 2019
+    Info: Elapsed time: 00:01:57
+    Info: Total CPU time (on all processors): 00:01:56
 
 

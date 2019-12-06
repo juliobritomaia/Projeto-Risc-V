@@ -56,7 +56,7 @@ end component;
 component regfile port(
 	DATA: IN STD_LOGIC_VECTOR(63 DOWNTO 0);
 	rd: IN STD_LOGIC_VECTOR(4 DOWNTO 0);
-	clock,enable : IN STD_LOGIC;
+	clk,enable : IN STD_LOGIC;
 	inst_rs1,inst_rs2: IN STD_LOGIC_VECTOR(4 DOWNTO 0);
 	out_rs1,out_rs2: OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
 );
@@ -197,7 +197,7 @@ RI1 : RI port map (
 regfile1 : regfile port map (
 	DATA => outMUX0,
 	rd => outRI(11 downto 7),
-	clock => clk, enable => enableRegfile,
+	clk => clk, enable => enableRegfile,
 	inst_rs1 => outRI(19 downto 15), inst_rs2 => outRI(24 downto 20),
 	out_rs1 => outRS1, out_rs2 => outRS2
 );

@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'clk'
+Slack : -6.762
+TNS   : -10171.302
+
+Type  : Slow Model Setup 'wr'
+Slack : -1.378
+TNS   : -41.031
+
+Type  : Slow Model Setup 'selMUX3[0]'
+Slack : -0.440
+TNS   : -1.597
+
+Type  : Slow Model Hold 'wr'
+Slack : -1.874
+TNS   : -64.563
+
+Type  : Slow Model Hold 'selMUX3[0]'
+Slack : -0.888
+TNS   : -7.677
+
+Type  : Slow Model Hold 'clk'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : -2.000
+TNS   : -2817.380
+
+Type  : Slow Model Minimum Pulse Width 'selMUX3[0]'
+Slack : -1.222
+TNS   : -1.222
+
+Type  : Slow Model Minimum Pulse Width 'wr'
+Slack : -1.222
+TNS   : -1.222
+
+Type  : Fast Model Setup 'clk'
+Slack : -2.426
+TNS   : -3602.606
+
+Type  : Fast Model Setup 'selMUX3[0]'
+Slack : 0.014
+TNS   : 0.000
+
+Type  : Fast Model Setup 'wr'
+Slack : 0.164
+TNS   : 0.000
+
+Type  : Fast Model Hold 'wr'
+Slack : -0.975
+TNS   : -45.336
+
+Type  : Fast Model Hold 'selMUX3[0]'
+Slack : -0.642
+TNS   : -3.003
+
+Type  : Fast Model Hold 'clk'
+Slack : 0.045
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : -2.000
+TNS   : -2817.380
+
+Type  : Fast Model Minimum Pulse Width 'selMUX3[0]'
+Slack : -1.222
+TNS   : -1.222
+
+Type  : Fast Model Minimum Pulse Width 'wr'
+Slack : -1.222
+TNS   : -1.222
+
+------------------------------------------------------------
