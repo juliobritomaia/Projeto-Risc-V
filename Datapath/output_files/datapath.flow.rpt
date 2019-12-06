@@ -1,5 +1,5 @@
 Flow report for datapath
-Thu Dec 05 15:00:29 2019
+Thu Dec 05 15:09:43 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Thu Dec 05 15:00:29 2019           ;
+; Flow Status                        ; Successful - Thu Dec 05 15:09:43 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; datapath                                        ;
 ; Top-level Entity Name              ; datapath                                        ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 4,891                                           ;
-;     Total combinational functions  ; 2,956                                           ;
-;     Dedicated logic registers      ; 2,011                                           ;
-; Total registers                    ; 2011                                            ;
+; Total logic elements               ; 11,792                                          ;
+;     Total combinational functions  ; 9,840                                           ;
+;     Dedicated logic registers      ; 2,028                                           ;
+; Total registers                    ; 2028                                            ;
 ; Total pins                         ; 208                                             ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
+; Total memory bits                  ; 131,072                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/05/2019 15:00:17 ;
+; Start date & time ; 12/05/2019 15:07:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; datapath            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 5334165495002.157556881704336         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 5334165495002.157556922105384         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
@@ -94,8 +94,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4683 MB             ; 00:00:11                           ;
-; Total                ; 00:00:11     ; --                      ; --                  ; 00:00:11                           ;
+; Analysis & Synthesis ; 00:02:41     ; 1.0                     ; 4766 MB             ; 00:02:37                           ;
+; Total                ; 00:02:41     ; --                      ; --                  ; 00:02:37                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

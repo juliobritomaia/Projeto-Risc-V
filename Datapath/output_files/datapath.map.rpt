@@ -1,5 +1,5 @@
 Analysis & Synthesis report for datapath
-Thu Dec 05 15:00:29 2019
+Thu Dec 05 15:09:43 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,10 +13,10 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
  12. General Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
  14. Source assignments for memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated
@@ -65,18 +65,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 05 15:00:29 2019           ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 05 15:09:42 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; datapath                                        ;
 ; Top-level Entity Name              ; datapath                                        ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 4,891                                           ;
-;     Total combinational functions  ; 2,956                                           ;
-;     Dedicated logic registers      ; 2,011                                           ;
-; Total registers                    ; 2011                                            ;
+; Total logic elements               ; 11,792                                          ;
+;     Total combinational functions  ; 9,840                                           ;
+;     Dedicated logic registers      ; 2,028                                           ;
+; Total registers                    ; 2028                                            ;
 ; Total pins                         ; 208                                             ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
+; Total memory bits                  ; 131,072                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
@@ -213,83 +213,131 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 4,891 ;
-;                                             ;       ;
-; Total combinational functions               ; 2956  ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 2705  ;
-;     -- 3 input functions                    ; 214   ;
-;     -- <=2 input functions                  ; 37    ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 2819  ;
-;     -- arithmetic mode                      ; 137   ;
-;                                             ;       ;
-; Total registers                             ; 2011  ;
-;     -- Dedicated logic registers            ; 2011  ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 208   ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 2011  ;
-; Total fan-out                               ; 17647 ;
-; Average fan-out                             ; 3.41  ;
-+---------------------------------------------+-------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 11,792 ;
+;                                             ;        ;
+; Total combinational functions               ; 9840   ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 7125   ;
+;     -- 3 input functions                    ; 2552   ;
+;     -- <=2 input functions                  ; 163    ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 9211   ;
+;     -- arithmetic mode                      ; 629    ;
+;                                             ;        ;
+; Total registers                             ; 2028   ;
+;     -- Dedicated logic registers            ; 2028   ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 208    ;
+; Total memory bits                           ; 131072 ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+; Maximum fan-out node                        ; clk    ;
+; Maximum fan-out                             ; 2092   ;
+; Total fan-out                               ; 43577  ;
+; Average fan-out                             ; 3.59   ;
++---------------------------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                 ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
-; |datapath                  ; 2956 (12)         ; 2011 (0)     ; 0           ; 0            ; 0       ; 0         ; 208  ; 0            ; |datapath                                   ; work         ;
-;    |PC:PC1|                ; 12 (12)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|PC:PC1                            ; work         ;
-;    |RI:RI1|                ; 0 (0)             ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|RI:RI1                            ; work         ;
-;    |branch:branch1|        ; 171 (171)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|branch:branch1                    ; work         ;
-;    |mux0:mux0_1|           ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux0:mux0_1                       ; work         ;
-;    |outCheck:checkOut|     ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|outCheck:checkOut                 ; work         ;
-;    |regfile:regfile1|      ; 2632 (38)         ; 1984 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1                  ; work         ;
-;       |mux32to1:Mux_rs1|   ; 1297 (1297)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|mux32to1:Mux_rs1 ; work         ;
-;       |mux32to1:Mux_rs2|   ; 1297 (1297)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|mux32to1:Mux_rs2 ; work         ;
-;       |reg32:RegX10|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX10     ; work         ;
-;       |reg32:RegX11|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX11     ; work         ;
-;       |reg32:RegX12|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX12     ; work         ;
-;       |reg32:RegX13|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX13     ; work         ;
-;       |reg32:RegX14|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX14     ; work         ;
-;       |reg32:RegX15|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX15     ; work         ;
-;       |reg32:RegX16|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX16     ; work         ;
-;       |reg32:RegX17|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX17     ; work         ;
-;       |reg32:RegX18|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX18     ; work         ;
-;       |reg32:RegX19|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX19     ; work         ;
-;       |reg32:RegX1|        ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX1      ; work         ;
-;       |reg32:RegX20|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX20     ; work         ;
-;       |reg32:RegX21|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX21     ; work         ;
-;       |reg32:RegX22|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX22     ; work         ;
-;       |reg32:RegX23|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX23     ; work         ;
-;       |reg32:RegX24|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX24     ; work         ;
-;       |reg32:RegX25|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX25     ; work         ;
-;       |reg32:RegX26|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX26     ; work         ;
-;       |reg32:RegX27|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX27     ; work         ;
-;       |reg32:RegX28|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX28     ; work         ;
-;       |reg32:RegX29|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX29     ; work         ;
-;       |reg32:RegX2|        ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX2      ; work         ;
-;       |reg32:RegX30|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX30     ; work         ;
-;       |reg32:RegX31|       ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX31     ; work         ;
-;       |reg32:RegX3|        ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX3      ; work         ;
-;       |reg32:RegX4|        ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX4      ; work         ;
-;       |reg32:RegX5|        ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX5      ; work         ;
-;       |reg32:RegX6|        ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX6      ; work         ;
-;       |reg32:RegX7|        ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX7      ; work         ;
-;       |reg32:RegX8|        ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX8      ; work         ;
-;       |reg32:RegX9|        ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX9      ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                          ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+--------------+
+; |datapath                                    ; 9840 (13)         ; 2028 (0)     ; 131072      ; 0            ; 0       ; 0         ; 208  ; 0            ; |datapath                                                                                                          ; work         ;
+;    |PC:PC1|                                  ; 25 (25)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|PC:PC1                                                                                                   ; work         ;
+;    |RI:RI1|                                  ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|RI:RI1                                                                                                   ; work         ;
+;    |addressSignal:addressSignal_1|           ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|addressSignal:addressSignal_1                                                                            ; work         ;
+;    |alu1:alu1_1|                             ; 5051 (5051)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu1:alu1_1                                                                                              ; work         ;
+;    |branch:branch1|                          ; 171 (171)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|branch:branch1                                                                                           ; work         ;
+;    |inCheck:checkIn|                         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|inCheck:checkIn                                                                                          ; work         ;
+;    |memoria:macroMemoria|                    ; 593 (593)         ; 0 (0)        ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria                                                                                     ; work         ;
+;       |UnidadeDeMemoria:UM0|                 ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM0                                                                ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram_m7a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated ; work         ;
+;       |UnidadeDeMemoria:UM1|                 ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM1                                                                ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM1|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram_m7a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM1|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated ; work         ;
+;       |UnidadeDeMemoria:UM2|                 ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM2                                                                ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM2|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram_m7a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM2|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated ; work         ;
+;       |UnidadeDeMemoria:UM3|                 ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM3                                                                ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM3|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram_m7a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM3|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated ; work         ;
+;       |UnidadeDeMemoria:UM4|                 ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM4                                                                ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM4|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram_m7a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM4|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated ; work         ;
+;       |UnidadeDeMemoria:UM5|                 ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM5                                                                ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM5|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram_m7a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM5|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated ; work         ;
+;       |UnidadeDeMemoria:UM6|                 ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM6                                                                ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM6|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram_m7a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM6|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated ; work         ;
+;       |UnidadeDeMemoria:UM7|                 ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM7                                                                ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM7|altsyncram:altsyncram_component                                ; work         ;
+;             |altsyncram_m7a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|memoria:macroMemoria|UnidadeDeMemoria:UM7|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated ; work         ;
+;    |mux0:mux0_1|                             ; 1087 (1087)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux0:mux0_1                                                                                              ; work         ;
+;    |mux1:mux1_1|                             ; 66 (66)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux1:mux1_1                                                                                              ; work         ;
+;    |mux2:mux2_1|                             ; 66 (66)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux2:mux2_1                                                                                              ; work         ;
+;    |mux3:mux3_1|                             ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux3:mux3_1                                                                                              ; work         ;
+;    |outCheck:checkOut|                       ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|outCheck:checkOut                                                                                        ; work         ;
+;    |regfile:regfile1|                        ; 2656 (38)         ; 1984 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1                                                                                         ; work         ;
+;       |mux32to1:Mux_rs1|                     ; 1309 (1309)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|mux32to1:Mux_rs1                                                                        ; work         ;
+;       |mux32to1:Mux_rs2|                     ; 1309 (1309)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|mux32to1:Mux_rs2                                                                        ; work         ;
+;       |reg32:RegX10|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX10                                                                            ; work         ;
+;       |reg32:RegX11|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX11                                                                            ; work         ;
+;       |reg32:RegX12|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX12                                                                            ; work         ;
+;       |reg32:RegX13|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX13                                                                            ; work         ;
+;       |reg32:RegX14|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX14                                                                            ; work         ;
+;       |reg32:RegX15|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX15                                                                            ; work         ;
+;       |reg32:RegX16|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX16                                                                            ; work         ;
+;       |reg32:RegX17|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX17                                                                            ; work         ;
+;       |reg32:RegX18|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX18                                                                            ; work         ;
+;       |reg32:RegX19|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX19                                                                            ; work         ;
+;       |reg32:RegX1|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX1                                                                             ; work         ;
+;       |reg32:RegX20|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX20                                                                            ; work         ;
+;       |reg32:RegX21|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX21                                                                            ; work         ;
+;       |reg32:RegX22|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX22                                                                            ; work         ;
+;       |reg32:RegX23|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX23                                                                            ; work         ;
+;       |reg32:RegX24|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX24                                                                            ; work         ;
+;       |reg32:RegX25|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX25                                                                            ; work         ;
+;       |reg32:RegX26|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX26                                                                            ; work         ;
+;       |reg32:RegX27|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX27                                                                            ; work         ;
+;       |reg32:RegX28|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX28                                                                            ; work         ;
+;       |reg32:RegX29|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX29                                                                            ; work         ;
+;       |reg32:RegX2|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX2                                                                             ; work         ;
+;       |reg32:RegX30|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX30                                                                            ; work         ;
+;       |reg32:RegX31|                         ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX31                                                                            ; work         ;
+;       |reg32:RegX3|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX3                                                                             ; work         ;
+;       |reg32:RegX4|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX4                                                                             ; work         ;
+;       |reg32:RegX5|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX5                                                                             ; work         ;
+;       |reg32:RegX6|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX6                                                                             ; work         ;
+;       |reg32:RegX7|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX7                                                                             ; work         ;
+;       |reg32:RegX8|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX8                                                                             ; work         ;
+;       |reg32:RegX9|                          ; 0 (0)             ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|regfile:regfile1|reg32:RegX9                                                                             ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                    ;
++---------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                                                                ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++---------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
+; memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 8            ; --           ; --           ; 16384 ; None ;
+; memoria:macroMemoria|UnidadeDeMemoria:UM1|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 8            ; --           ; --           ; 16384 ; None ;
+; memoria:macroMemoria|UnidadeDeMemoria:UM2|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 8            ; --           ; --           ; 16384 ; None ;
+; memoria:macroMemoria|UnidadeDeMemoria:UM3|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 8            ; --           ; --           ; 16384 ; None ;
+; memoria:macroMemoria|UnidadeDeMemoria:UM4|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 8            ; --           ; --           ; 16384 ; None ;
+; memoria:macroMemoria|UnidadeDeMemoria:UM5|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 8            ; --           ; --           ; 16384 ; None ;
+; memoria:macroMemoria|UnidadeDeMemoria:UM6|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 8            ; --           ; --           ; 16384 ; None ;
+; memoria:macroMemoria|UnidadeDeMemoria:UM7|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 8            ; --           ; --           ; 16384 ; None ;
++---------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -308,78 +356,114 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-----------------------------------------------------+--------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; outCheck:checkOut|S[0]                              ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[1]                              ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[2]                              ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[3]                              ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[4]                              ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[5]                              ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[6]                              ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[7]                              ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[8]                              ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[9]                              ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[10]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[11]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[12]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[13]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[14]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[15]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[16]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[17]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[18]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[19]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[20]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[21]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[22]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[23]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[24]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[25]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[26]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[27]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[28]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[29]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[30]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[31]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[32]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[33]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[34]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[35]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[36]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[37]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[38]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[39]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[40]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[41]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[42]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[43]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[44]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[45]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[46]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[47]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[48]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[49]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[50]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[51]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[52]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[53]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[54]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[55]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[56]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[57]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[58]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[59]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[60]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[61]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[62]                             ; enableOUTcheck      ; yes                    ;
-; outCheck:checkOut|S[63]                             ; enableOUTcheck      ; yes                    ;
-; Number of user-specified and inferred latches = 64  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++---------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                 ;
++------------------------------------------------------+-------------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal                 ; Free of Timing Hazards ;
++------------------------------------------------------+-------------------------------------+------------------------+
+; outCheck:checkOut|S[0]                               ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[1]                               ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[2]                               ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[3]                               ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[4]                               ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[5]                               ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[6]                               ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[7]                               ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[8]                               ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[9]                               ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[10]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[11]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[12]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[13]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[14]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[15]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[16]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[17]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[18]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[19]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[20]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[21]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[22]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[23]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[24]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[25]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[26]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[27]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[28]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[29]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[30]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[31]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[32]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[33]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[34]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[35]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[36]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[37]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[38]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[39]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[40]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[41]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[42]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[43]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[44]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[45]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[46]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[47]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[48]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[49]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[50]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[51]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[52]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[53]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[54]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[55]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[56]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[57]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[58]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[59]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[60]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[61]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[62]                              ; outCheck:checkOut|check             ; yes                    ;
+; outCheck:checkOut|S[63]                              ; outCheck:checkOut|check             ; yes                    ;
+; addressSignal:addressSignal_1|S[0]                   ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[1]                   ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[2]                   ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[3]                   ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[4]                   ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[5]                   ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[6]                   ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[7]                   ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[8]                   ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[9]                   ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[10]                  ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[11]                  ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[12]                  ; addressSignal:addressSignal_1|check ; yes                    ;
+; addressSignal:addressSignal_1|S[13]                  ; addressSignal:addressSignal_1|check ; yes                    ;
+; alu1:alu1_1|aux64[31]                                ; alu1:alu1_1|Mux2550                 ; yes                    ;
+; alu1:alu1_1|aux2_64[31]                              ; alu1:alu1_1|Mux1987                 ; yes                    ;
+; alu1:alu1_1|aux64[63]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[62]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[61]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[60]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[59]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[58]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[57]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[56]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[55]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[54]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[53]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[52]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[51]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[50]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[49]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[48]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[47]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[46]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[45]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; alu1:alu1_1|aux64[44]                                ; alu1:alu1_1|Mux2583                 ; yes                    ;
+; Number of user-specified and inferred latches = 218  ;                                     ;                        ;
++------------------------------------------------------+-------------------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +----------------------------------------------------------------------------------+
@@ -388,19 +472,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Register name                           ; Reason for Removal                     ;
 +-----------------------------------------+----------------------------------------+
 ; regfile:regfile1|reg32:RegX0|AUX[0..63] ; Stuck at GND due to stuck port data_in ;
-; RI:RI1|riOUT[12..14]                    ; Lost fanout                            ;
-; Total Number of Removed Registers = 67  ;                                        ;
+; Total Number of Removed Registers = 64  ;                                        ;
 +-----------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                            ;
-+-------------------------------------+---------------------------+------------------------------------------------------+
-; Register name                       ; Reason for Removal        ; Registers Removed due to This Register               ;
-+-------------------------------------+---------------------------+------------------------------------------------------+
-; regfile:regfile1|reg32:RegX0|AUX[0] ; Stuck at GND              ; RI:RI1|riOUT[13], RI:RI1|riOUT[12], RI:RI1|riOUT[14] ;
-;                                     ; due to stuck port data_in ;                                                      ;
-+-------------------------------------+---------------------------+------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -408,12 +481,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2011  ;
+; Total registers                              ; 2028  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 12    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2011  ;
+; Number of registers using Clock Enable       ; 2028  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -423,24 +496,43 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 4:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |datapath|PC:PC1|pcOUT[4]                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |datapath|memoria:macroMemoria|data6              ;
-; 4:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |datapath|memoria:macroMemoria|dataout            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |datapath|memoria:macroMemoria|data6              ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; No         ; |datapath|memoria:macroMemoria|data0              ;
-; 32:1               ; 64 bits   ; 1344 LEs      ; 1280 LEs             ; 64 LEs                 ; No         ; |datapath|regfile:regfile1|mux32to1:Mux_rs1|Mux48 ;
-; 32:1               ; 64 bits   ; 1344 LEs      ; 1280 LEs             ; 64 LEs                 ; No         ; |datapath|regfile:regfile1|mux32to1:Mux_rs2|Mux9  ;
-; 10:1               ; 64 bits   ; 384 LEs       ; 384 LEs              ; 0 LEs                  ; No         ; |datapath|memoria:macroMemoria|data1[7]           ;
-; 13:1               ; 23 bits   ; 184 LEs       ; 161 LEs              ; 23 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux40                       ;
-; 13:1               ; 16 bits   ; 128 LEs       ; 112 LEs              ; 16 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux1                        ;
-; 21:1               ; 16 bits   ; 224 LEs       ; 112 LEs              ; 112 LEs                ; No         ; |datapath|mux0:mux0_1|Mux29                       ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; No         ; |datapath|memoria:macroMemoria|address5[9]        ;
-; 6:1                ; 11 bits   ; 44 LEs        ; 0 LEs                ; 44 LEs                 ; No         ; |datapath|memoria:macroMemoria|address4[4]        ;
-; 8:1                ; 11 bits   ; 55 LEs        ; 0 LEs                ; 55 LEs                 ; No         ; |datapath|memoria:macroMemoria|address3[10]       ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 0 LEs                ; 77 LEs                 ; No         ; |datapath|memoria:macroMemoria|address2[4]        ;
-; 16:1               ; 11 bits   ; 110 LEs       ; 0 LEs                ; 110 LEs                ; No         ; |datapath|memoria:macroMemoria|address1[7]        ;
-; 22:1               ; 11 bits   ; 154 LEs       ; 0 LEs                ; 154 LEs                ; No         ; |datapath|memoria:macroMemoria|address0[10]       ;
-; 45:1               ; 8 bits    ; 240 LEs       ; 64 LEs               ; 176 LEs                ; No         ; |datapath|mux0:mux0_1|Mux53                       ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |datapath|PC:PC1|pcOUT[2]                         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftRight0                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |datapath|memoria:macroMemoria|data7              ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |datapath|memoria:macroMemoria|address1[3]        ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; No         ; |datapath|memoria:macroMemoria|address6[9]        ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |datapath|memoria:macroMemoria|address0           ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |datapath|mux3:mux3_1|Mux3                        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |datapath|mux3:mux3_1|Mux7                        ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; No         ; |datapath|memoria:macroMemoria|address5[3]        ;
+; 3:1                ; 72 bits   ; 144 LEs       ; 144 LEs              ; 0 LEs                  ; No         ; |datapath|memoria:macroMemoria|data2[6]           ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |datapath|memoria:macroMemoria|dataout            ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftRight0                 ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |datapath|memoria:macroMemoria|address0           ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |datapath|memoria:macroMemoria|dataout            ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; No         ; |datapath|memoria:macroMemoria|address4[0]        ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftLeft2                  ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 22 LEs               ; 11 LEs                 ; No         ; |datapath|memoria:macroMemoria|address2[5]        ;
+; 32:1               ; 64 bits   ; 1344 LEs      ; 1280 LEs             ; 64 LEs                 ; No         ; |datapath|regfile:regfile1|mux32to1:Mux_rs1|Mux60 ;
+; 32:1               ; 64 bits   ; 1344 LEs      ; 1280 LEs             ; 64 LEs                 ; No         ; |datapath|regfile:regfile1|mux32to1:Mux_rs2|Mux60 ;
+; 32:1               ; 63 bits   ; 1323 LEs      ; 441 LEs              ; 882 LEs                ; No         ; |datapath|alu1:alu1_1|Mux1036                     ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftLeft2                  ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |datapath|alu1:alu1_1|ShiftLeft2                  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; No         ; |datapath|memoria:macroMemoria|dataout            ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |datapath|memoria:macroMemoria|dataout            ;
+; 13:1               ; 7 bits    ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; No         ; |datapath|mux0:mux0_1|Mux57                       ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 44 LEs               ; 33 LEs                 ; No         ; |datapath|memoria:macroMemoria|address0[5]        ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; No         ; |datapath|memoria:macroMemoria|dataout            ;
+; 28:1               ; 9 bits    ; 162 LEs       ; 108 LEs              ; 54 LEs                 ; No         ; |datapath|alu1:alu1_1|Mux184                      ;
+; 28:1               ; 2 bits    ; 36 LEs        ; 26 LEs               ; 10 LEs                 ; No         ; |datapath|alu1:alu1_1|Mux179                      ;
+; 36:1               ; 8 bits    ; 192 LEs       ; 136 LEs              ; 56 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux47                       ;
+; 36:1               ; 8 bits    ; 192 LEs       ; 136 LEs              ; 56 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux36                       ;
+; 38:1               ; 8 bits    ; 200 LEs       ; 144 LEs              ; 56 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux14                       ;
+; 39:1               ; 4 bits    ; 104 LEs       ; 76 LEs               ; 28 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux7                        ;
+; 40:1               ; 2 bits    ; 52 LEs        ; 40 LEs               ; 12 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux2                        ;
+; 45:1               ; 6 bits    ; 180 LEs       ; 48 LEs               ; 132 LEs                ; No         ; |datapath|mux0:mux0_1|Mux50                       ;
+; 49:1               ; 16 bits   ; 512 LEs       ; 336 LEs              ; 176 LEs                ; No         ; |datapath|mux0:mux0_1|Mux17                       ;
+; 72:1               ; 2 bits    ; 96 LEs        ; 42 LEs               ; 54 LEs                 ; No         ; |datapath|mux0:mux0_1|Mux49                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
@@ -1124,7 +1216,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:09     ;
+; Top            ; 00:02:32     ;
 +----------------+--------------+
 
 
@@ -1134,7 +1226,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Dec 05 15:00:17 2019
+    Info: Processing started: Thu Dec 05 15:06:59 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off datapath -c datapath
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/reg32.vhd
@@ -1179,7 +1271,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file /jygos/
 Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/alu1.vhd
     Info (12022): Found design unit 1: alu1-hardware
     Info (12023): Found entity 1: alu1
-Warning (12019): Can't analyze file -- file ../Elementos/mux2to1.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file /jygos/projeto risc v/elementos/outcheck.vhd
     Info (12022): Found design unit 1: outCheck-hardware
     Info (12023): Found entity 1: outCheck
@@ -1298,140 +1389,620 @@ Info (12128): Elaborating entity "reg32" for hierarchy "regfile:regfile1|reg32:R
 Info (12128): Elaborating entity "mux32to1" for hierarchy "regfile:regfile1|mux32to1:Mux_rs1"
 Info (12128): Elaborating entity "PC" for hierarchy "PC:PC1"
 Info (12128): Elaborating entity "mux3" for hierarchy "mux3:mux3_1"
-Warning (10034): Output port "S" at mux3.vhd(9) has no driver
-Warning (12158): Entity "mux3" contains only dangling pins
+Info (10041): Inferred latch for "S[0]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[1]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[2]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[3]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[4]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[5]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[6]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[7]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[8]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[9]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[10]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[11]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[12]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[13]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[14]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[15]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[16]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[17]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[18]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[19]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[20]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[21]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[22]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[23]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[24]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[25]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[26]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[27]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[28]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[29]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[30]" at mux3.vhd(21)
+Info (10041): Inferred latch for "S[31]" at mux3.vhd(21)
 Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux2_1"
 Info (12128): Elaborating entity "mux1" for hierarchy "mux1:mux1_1"
 Info (12128): Elaborating entity "mux0" for hierarchy "mux0:mux0_1"
 Info (12128): Elaborating entity "branch" for hierarchy "branch:branch1"
 Info (12128): Elaborating entity "alu1" for hierarchy "alu1:alu1_1"
-Warning (10541): VHDL Signal Declaration warning at alu1.vhd(9): used implicit default value for signal "S" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[7]"
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM7|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[7]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM7|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM7|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM7|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM7|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM7|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[2]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM7|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[1]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM7|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[0]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM6|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[7]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM6|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM6|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM6|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM6|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM6|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[2]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM6|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[1]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM6|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[0]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM3|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[7]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM3|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM3|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM3|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM3|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM3|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[2]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM3|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[1]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM3|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[0]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM2|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[7]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM2|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM2|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM2|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM2|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM2|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[2]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM2|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[1]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM2|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[0]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[2]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[1]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM0|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[0]"
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM4|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[0]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM4|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[1]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM4|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[2]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM4|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM4|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM4|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM4|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM4|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[7]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM5|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[0]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM5|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[1]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM5|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[2]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM5|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM5|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM5|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM5|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM5|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[7]"
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM1|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[7]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM1|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM1|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM1|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM1|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM1|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[2]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM1|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[1]"
-        Warning (14320): Synthesized away node "memoria:macroMemoria|UnidadeDeMemoria:UM1|altsyncram:altsyncram_component|altsyncram_m7a1:auto_generated|q_a[0]"
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "outAddress[0]" is stuck at GND
-    Warning (13410): Pin "outAddress[1]" is stuck at GND
-    Warning (13410): Pin "outAddress[2]" is stuck at GND
-    Warning (13410): Pin "outAddress[3]" is stuck at GND
-    Warning (13410): Pin "outAddress[4]" is stuck at GND
-    Warning (13410): Pin "outAddress[5]" is stuck at GND
-    Warning (13410): Pin "outAddress[6]" is stuck at GND
-    Warning (13410): Pin "outAddress[7]" is stuck at GND
-    Warning (13410): Pin "outAddress[8]" is stuck at GND
-    Warning (13410): Pin "outAddress[9]" is stuck at GND
-    Warning (13410): Pin "outAddress[10]" is stuck at GND
-    Warning (13410): Pin "outAddress[11]" is stuck at GND
-    Warning (13410): Pin "outAddress[12]" is stuck at GND
-    Warning (13410): Pin "outAddress[13]" is stuck at GND
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Warning (10631): VHDL Process Statement warning at alu1.vhd(21): inferring latch(es) for signal or variable "aux64", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at alu1.vhd(21): inferring latch(es) for signal or variable "aux2_64", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "aux2_64[0]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[1]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[2]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[3]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[4]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[5]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[6]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[7]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[8]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[9]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[10]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[11]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[12]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[13]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[14]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[15]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[16]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[17]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[18]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[19]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[20]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[21]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[22]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[23]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[24]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[25]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[26]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[27]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[28]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[29]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[30]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[31]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[32]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[33]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[34]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[35]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[36]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[37]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[38]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[39]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[40]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[41]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[42]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[43]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[44]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[45]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[46]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[47]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[48]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[49]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[50]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[51]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[52]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[53]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[54]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[55]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[56]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[57]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[58]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[59]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[60]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[61]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[62]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux2_64[63]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[0]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[1]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[2]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[3]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[4]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[5]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[6]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[7]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[8]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[9]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[10]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[11]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[12]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[13]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[14]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[15]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[16]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[17]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[18]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[19]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[20]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[21]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[22]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[23]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[24]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[25]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[26]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[27]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[28]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[29]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[30]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[31]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[32]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[33]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[34]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[35]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[36]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[37]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[38]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[39]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[40]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[41]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[42]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[43]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[44]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[45]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[46]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[47]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[48]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[49]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[50]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[51]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[52]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[53]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[54]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[55]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[56]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[57]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[58]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[59]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[60]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[61]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[62]" at alu1.vhd(21)
+Info (10041): Inferred latch for "aux64[63]" at alu1.vhd(21)
+Warning (13012): Latch outCheck:checkOut|S[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux32~synth
+Warning (13012): Latch outCheck:checkOut|S[32] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[33] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[34] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[35] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[36] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[37] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[38] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[39] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[40] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[41] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[42] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[43] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[44] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[45] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[46] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[47] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[48] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[49] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[50] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[51] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[52] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[53] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[54] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[55] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[56] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[57] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[58] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[59] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[60] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[61] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[62] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux60~synth
+Warning (13012): Latch outCheck:checkOut|S[63] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal regfile:regfile1|mux32to1:Mux_rs2|Mux0~synth
+Warning (13012): Latch addressSignal:addressSignal_1|S[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[4]
+Warning (13012): Latch addressSignal:addressSignal_1|S[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[4]
+Warning (13012): Latch addressSignal:addressSignal_1|S[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch addressSignal:addressSignal_1|S[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch addressSignal:addressSignal_1|S[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch addressSignal:addressSignal_1|S[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch addressSignal:addressSignal_1|S[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch addressSignal:addressSignal_1|S[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch addressSignal:addressSignal_1|S[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch addressSignal:addressSignal_1|S[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch addressSignal:addressSignal_1|S[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch addressSignal:addressSignal_1|S[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[4]
+Warning (13012): Latch addressSignal:addressSignal_1|S[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch addressSignal:addressSignal_1|S[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[4]
+Warning (13012): Latch alu1:alu1_1|aux64[31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux2_64[31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux64[63] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[62] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[61] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[60] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[59] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[58] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[57] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[56] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[55] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[54] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[53] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[52] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[51] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[50] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[49] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[48] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[47] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[46] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[45] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[44] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[43] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[42] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[41] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[40] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[39] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[38] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[37] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[36] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[35] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[34] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[33] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[32] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux64[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[3]
+Warning (13012): Latch alu1:alu1_1|aux2_64[63] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[62] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[61] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[60] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[59] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[58] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[57] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[56] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[55] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[54] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[53] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[52] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[51] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[50] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[49] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[48] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[47] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[46] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[45] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[44] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[43] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[42] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[41] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[40] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[39] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[38] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[37] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[36] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[35] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[34] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[33] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[32] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch alu1:alu1_1|aux2_64[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selAlu[0]
+Warning (13012): Latch mux3:mux3_1|S[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
+Warning (13012): Latch mux3:mux3_1|S[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selMUX3[1]
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 27 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "selMUX1"
-    Warning (15610): No output dependent on input pin "selMUX2"
-    Warning (15610): No output dependent on input pin "selMUX3[0]"
-    Warning (15610): No output dependent on input pin "selMUX3[1]"
-    Warning (15610): No output dependent on input pin "selAlu[0]"
-    Warning (15610): No output dependent on input pin "selAlu[1]"
-    Warning (15610): No output dependent on input pin "selAlu[2]"
-    Warning (15610): No output dependent on input pin "selAlu[3]"
-    Warning (15610): No output dependent on input pin "selAlu[4]"
-    Warning (15610): No output dependent on input pin "outMemProg[0]"
-    Warning (15610): No output dependent on input pin "outMemProg[1]"
-    Warning (15610): No output dependent on input pin "outMemProg[2]"
-    Warning (15610): No output dependent on input pin "outMemProg[3]"
-    Warning (15610): No output dependent on input pin "outMemProg[4]"
-    Warning (15610): No output dependent on input pin "outMemProg[5]"
-    Warning (15610): No output dependent on input pin "outMemProg[6]"
-    Warning (15610): No output dependent on input pin "outMemProg[25]"
-    Warning (15610): No output dependent on input pin "outMemProg[26]"
-    Warning (15610): No output dependent on input pin "outMemProg[27]"
-    Warning (15610): No output dependent on input pin "outMemProg[28]"
-    Warning (15610): No output dependent on input pin "outMemProg[29]"
-    Warning (15610): No output dependent on input pin "outMemProg[30]"
-    Warning (15610): No output dependent on input pin "outMemProg[31]"
-    Warning (15610): No output dependent on input pin "wr"
-    Warning (15610): No output dependent on input pin "outMemProg[12]"
-    Warning (15610): No output dependent on input pin "outMemProg[13]"
-    Warning (15610): No output dependent on input pin "outMemProg[14]"
-Info (21057): Implemented 5163 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 12128 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 115 input pins
     Info (21059): Implemented 93 output pins
-    Info (21061): Implemented 4955 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 120 warnings
-    Info: Peak virtual memory: 4683 megabytes
-    Info: Processing ended: Thu Dec 05 15:00:29 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:12
+    Info (21061): Implemented 11856 logic cells
+    Info (21064): Implemented 64 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 439 warnings
+    Info: Peak virtual memory: 4766 megabytes
+    Info: Processing ended: Thu Dec 05 15:09:43 2019
+    Info: Elapsed time: 00:02:44
+    Info: Total CPU time (on all processors): 00:02:39
 
 

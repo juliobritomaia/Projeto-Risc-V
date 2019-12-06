@@ -1,0 +1,14 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity mult8 is port(
+	entrada: in std_logic_vector(2 downto 0);
+	saida: out std_logic_vector(63 downto 0);
+);
+end entity;
+
+architecture design of mult8 is
+begin
+	saida <= unsigned(entrada)*8;
+end architecture;
